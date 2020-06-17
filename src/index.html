@@ -1,0 +1,49 @@
+@include('parts/header.html')
+
+        <div class="site-primary">
+            <div class="site-search">
+                <div class="container">
+                    <div class="site-search__wrap">
+                        <div class="site-search__input">
+                            <input type="text">
+                        </div>
+                        <div class="site-search__btn">
+                            <button class="btn"><span class="icon-search icon_before"></span>Найти</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container site-content">
+                <main class="site-main">1</main>
+                <aside class="site-aside" v-if="!phoneDevice">
+                    <div class="site-aside-wrap">
+                        <div class="aside-section site-aside-categories">
+                            <h4>Категории</h4>
+                            <ul class="unstyled">
+                                <li><a href="#">Вывоз мусора <span>15</span></a></li>
+                                <li><a href="#">Квартирный переезд <span>24</span></a></li>
+                                <li><a href="#">Перевозка мебели <span>53</span></a></li>
+                                <li><a href="#">Офисный переезд <span>17</span></a></li>
+                                <li><a href="#">Дачные переезды <span>64</span></a></li>
+                                <li><a href="#">Перевозка вещей <span>11</span></a></li>
+                                <li><a href="#">Переезды с грузчиками <span>97</span></a></li>
+                                <li><a href="#">Перевозка дивана <span>23</span></a></li>
+                                <li><a href="#">Перевозка холодильника <span>778</span></a></li>
+                                <li><a href="#">Перевозка пианино <span>12</span></a></li>
+                                <li><a href="#">Рефрижераторы <span>5</span></a></li>
+                                <li><a href="#">Негабаритные перевозки <span>11</span></a></li>
+                                <li><a href="#">Грузоперевозка по России <span>58</span></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="aside-section site-aside-categories">
+                            <h4>Фильтр</h4>
+                            Тут будет фильтр!
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+@include('parts/footer.html')

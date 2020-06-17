@@ -1,0 +1,70 @@
+/*==============  Layout  ==============*/
+.site-search
+    background-color: $color-base-dark
+
+.site-search__wrap
+    display: -webkit-box
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
+    -webkit-flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    padding-top: 15px
+    padding-bottom: 15px
+
+.site-search__input,
+.site-search__btn
+    -webkit-flex-basis: 0
+    -ms-flex-preferred-size: 0
+    flex-basis: 0
+    -webkit-box-flex: 1
+    -webkit-flex-grow: 1
+    -ms-flex-positive: 1
+    flex-grow: 1
+    min-width: 0
+    max-width: 100%
+    text-align: center
+
+.site-search__input
+    input[type="text"]
+        border-radius: 20px 0 0 20px
+
+.site-search__btn
+    -webkit-box-flex: 0
+    -webkit-flex: 0 0 230px
+    -ms-flex: 0 0 230px
+    flex: 0 0 230px
+    max-width: 230px
+    button
+        border-radius: 0 20px 20px 0
+        width: 100%
+
+.site-aside-wrap
+    background-color: #fff
+    padding: 15px
+
+.aside-section
+    margin-bottom: 15px
+    h4
+        margin-bottom: 10px
+    &:last-child
+        margin-bottom: 0
+
+.site-aside-categories
+    ul
+        li
+            margin-bottom: 8px
+            +fz(12)
+            a
+                color: $color-text
+                display: block
+                position: relative
+                span
+                    position: absolute
+                    right: 0
+                    color: $color-text-light
+
+.card
+    padding: 20px 15px
+    background-color: #fff

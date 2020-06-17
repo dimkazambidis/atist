@@ -1,0 +1,62 @@
+.site
+    overflow: hidden
+    background-color: #f4f8fb
+    &.menu-on
+        .site-wrapper
+            //left: calc(100vw - 55px)
+            left: 265px
+
+.site-wrapper
+    display: flex
+    flex-direction: column
+    position: relative
+    min-height: 100vh
+    left: 0
+    transition: left 0.15s ease-in-out
+
+.site-mobile-menu
+    background-color: $color-base
+    position: absolute
+    top: 0
+    right: 100%
+    bottom: 0
+    width: 265px  
+
+.site-primary
+    display: flex
+    flex: 1 0 auto
+    flex-direction: column
+    width: 100%
+    padding-bottom: 40px
+
+.site-content
+    display: flex
+    flex: 1 0 auto
+    flex-wrap: wrap
+    width: 100%
+    padding-left: 5px
+    padding-right: 5px
+
+.site-main,
+.site-aside
+    padding-left: 10px
+    padding-right: 10px
+
+.site-main
+    -webkit-flex-basis: 0
+    -ms-flex-preferred-size: 0
+    flex-basis: 0
+    -webkit-box-flex: 1
+    -webkit-flex-grow: 1
+    -ms-flex-positive: 1
+    flex-grow: 1
+    min-width: 0
+    max-width: 100%
+
+.site-aside
+    padding-top: 30px
+    -webkit-box-flex: 0
+    -webkit-flex: 0 0 250px
+    -ms-flex: 0 0 250px
+    flex: 0 0 250px
+    max-width: 250px

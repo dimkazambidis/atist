@@ -1,0 +1,39 @@
+//===== Font family =====//
+$font-default: "Roboto", sans-serif //----- Base font
+
+//===== Colors =====//
+$color-base: #4784b3        //----- Base color
+$color-base-light: #b1c4d3  //----- Base color light
+$color-base-dark: #3875a2   //----- Base color dark
+$color-accent: #fd6f57      //----- Accent color
+$color-accent-dark: #f74a2c //----- Accent color
+$color-bg: #e2eaed          //----- Background gray color
+$color-placeholder: #8093a1 //----- Placeholders color
+$color-success: green         //----- Success color
+$color-danger: red            //----- Danger color
+$color-text: #3a4b5b        //----- Standart text color
+$color-text-light: #90A1A9  //----- Light text color
+$color-link: $color-accent    //----- Links color
+$color-input: #f5f9fc       //----- Inputs background color
+
+//===== Fonts sizes =====//
+$fz-base: 14       //----- Base font size (px)
+$lh-base: 1.5      //----- Base line height
+
+//===== Functions =====//
+=fz($fz)
+    font-size: $fz/$fz-base + rem
+
+=lh($lh)
+    line-height: $lh/$fz-base
+
+=element-geometry($h)
+    height: $h + px
+    border-radius: $h/2 + px
+
+//===== Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss" =====//
+$grid-gutter-width: 20px //----- Gutters widths
+$grid-columns: 12        //----- Columns count
+
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 1024px, xl: 1230px)      //----- Breakpoints
+$container-max-widths: (sm: 100%, md: 768px, lg: 1024px, xl: 1230px)!default //----- Containers widths

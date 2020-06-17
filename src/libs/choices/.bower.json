@@ -1,0 +1,15 @@
+{
+  "name": "choices.js",
+  "homepage": "https://github.com/jshjohnson/Choices",
+  "version": "9.0.1",
+  "_release": "9.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v9.0.1",
+    "commit": "214b6e80df2a6bcf9d3e7d5cb461eae5176069f2"
+  },
+  "_source": "https://github.com/jshjohnson/Choices.git",
+  "_target": "^9.0.1",
+  "_originalSource": "choices.js",
+  "_direct": true
+}

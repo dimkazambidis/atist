@@ -1,0 +1,251 @@
+/*===============  Headings  ===============*/
+h1, h2, h3, h4, h5, h6
+    font-weight: 700
+    margin-bottom: 0
+
+h1
+    +fz(24)
+
+h2
+    +fz(24)
+
+h3
+    +fz(18)
+
+h4
+    +fz(16)
+
+h5
+    +fz(14)
+
+h6
+    +fz(12)
+
+/*===============  Typography  ===============*/
+p
+    margin-bottom: 1rem
+
+ul
+    margin-bottom: 1rem
+    padding-left: 1em
+    list-style: none
+    li
+        position: relative
+        &::before
+            content: "•"
+            display: inline-block
+            position: absolute
+            color: inherit
+            left: -1em
+            font-weight: 700
+    &.unstyled
+        margin: 0
+        padding: 0
+        li
+            &::before
+                content: none
+
+a
+    color: $color-link
+    &:hover
+        color: darken($color-link, 10%)
+
+/*===============  Inputs  ===============*/
+.input-container
+    margin-bottom: 20px
+    position: relative
+
+input[type="text"],
+input[type="number"]
+    display: inline-block
+    +element-geometry(40)
+    width: 100%
+    background-color: $color-input
+    border: 1px solid #ced8e2
+    padding-left: 15px
+    padding-right: 15px
+    transition: background-color .15s, border-color .15s
+    &:focus
+        outline: none
+        background-color: #fff
+        border-color: $color-base
+
+textarea
+    display: inline-block
+    width: 100%
+    background-color: $color-input
+    border: 1px solid #ced8e2
+    padding: 8.5px 15px
+    border-radius: 8px
+    transition: background-color .15s, border-color .15s
+    &:focus
+        outline: none
+        background-color: #fff
+        border-color: $color-base
+
+.choices[data-type*=select-one]
+    .choices__inner
+        padding: 0
+
+.is-focused
+    .choices__inner
+        border-color: #ced8e2
+
+.choices__inner
+    padding: 0
+    min-height: 40px
+    +element-geometry(40)
+    background-color: #fff
+    border: 1px solid #ced8e2
+    font-weight: 700
+
+.choices__list--single
+    padding: 8.5px 32px 8.5px 15px
+
+.choices__placeholder
+    opacity: 1
+
+.choices__list--dropdown
+    overflow: visible
+    border: none
+    margin-bottom: 0
+    padding-top: 11px
+    padding-bottom: 11px
+    background-color: transparent
+    .choices__list
+        border-radius: 4px
+        box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.25)
+        background-color: #fff
+    .choices__item
+        padding: 5px 15px
+    .choices__item--selectable
+        &.is-highlighted
+            background-color: $color-bg
+        &.is-selected
+            color: $color-base
+
+//+++++ Dropdown top
+.is-flipped
+    .choices__list--dropdown
+        border: none
+        margin-bottom: 0
+        padding-top: 11px
+        padding-bottom: 11px
+    &.is-open
+        .choices__list--dropdown
+            &::before
+                content: ""
+                display: block
+                position: absolute
+                width: 16px
+                border-top: 10px solid #fff
+                border-bottom: none
+                border-left: 8px solid transparent
+                border-right: 8px solid transparent
+                top: auto
+                bottom: 1px
+                left: 50%
+                margin-left: -8px
+                z-index: 1
+        .choices__inner
+            +element-geometry(40)
+            border-color: $color-base
+            color: $color-base
+
+//+++++ Dropdown bottom
+.is-open
+    .choices__inner
+        +element-geometry(40)
+        border-color: $color-base
+        color: $color-base
+    .choices__list--dropdown
+        border: none
+        &::before
+            content: ""
+            display: block
+            position: absolute
+            width: 16px
+            border-bottom: 10px solid #fff
+            border-left: 8px solid transparent
+            border-right: 8px solid transparent
+            top: 1px
+            left: 50%
+            margin-left: -8px
+            z-index: 1
+
+/*===============  Buttons  ===============*/
+a,
+input[type="submit"],
+input[type="button"],
+button
+    &.btn
+        display: inline-block
+        +element-geometry(40)
+        min-width: 220px
+        border: 1px solid $color-accent
+        background-color: $color-accent
+        text-align: center
+        +fz(16)
+        color: #fff
+        padding: 5.5px 15px
+        text-decoration: none
+        letter-spacing: .015em
+        transition: background-color .15s, border-color .15s, color .15s
+        *[class^="icon-"],
+        *[class*=" icon-"]
+            +fz(24)
+            display: inline-block
+            position: relative
+            line-height: 0
+            top: 4px
+            &.icon_before
+                margin-right: 10px
+            &.icon_after
+                margin-left: 10px
+        &.btn_inline
+            min-width: auto
+        &:hover
+            background-color: $color-accent-dark
+            border-color: $color-accent-dark
+        &.btn_outline
+            background-color: transparent
+            color: $color-accent
+            &:hover
+                background-color: $color-accent
+                border-color: $color-accent
+                color: #fff
+        &.btn_invert
+            background-color: $color-base-light
+            border-color: $color-base-light
+            &:hover
+                background-color: $color-base
+                border-color: $color-base
+            &.btn_outline
+                background-color: transparent
+                border-color: $color-base
+                color: $color-base
+                &:hover
+                    background-color: $color-base
+                    color: #fff
+        &.btn_primary
+            background-color: $color-base
+            border-color: $color-base
+            &:hover
+                background-color: $color-base-dark
+                border-color: $color-base-dark
+        &.btn_small
+            +element-geometry(32)
+            +fz(14)
+            min-width: auto
+            padding-top: 4.5px
+            padding-bottom: 4.5px
+            *[class^="icon-"],
+            *[class*=" icon-"]
+                +fz(18)
+                top: 3px
+                &.icon_before
+                    margin-right: 8px
+                &.icon_after
+                    margin-left: 8px
+        &:focus
+            outline: none

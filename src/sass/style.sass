@@ -1,0 +1,65 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+/*===============  Base  ===============*/
+
+*
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    &:before, &:after
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        box-sizing: border-box
+
+*::-webkit-input-placeholder
+    color: $color-placeholder
+    opacity: 1
+
+*:-moz-placeholder
+    color: $color-placeholder
+    opacity: 1
+
+*::-moz-placeholder
+    color: $color-placeholder
+    opacity: 1
+
+*:-ms-input-placeholder
+    color: $color-placeholder
+    opacity: 1
+
+html
+    font-size: $fz-base + px
+    line-height: $lh-base
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+    color: $color-danger
+body input:required:valid,
+body textarea:required:valid
+    color: $color-success
+
+body
+    min-width: 320px
+    position: relative
+    font-family: $font-default
+    overflow-x: hidden
+    color: $color-text
+    font-size: $fz-base + px
+    line-height: $lh-base
+
+figure
+    margin-bottom: 0
+
+@import "elements"
+@import "extra"
+@import "template"
+@import "header"
+@import "layout"
+@import "footer"
+@import "animate"
+@import "media"
+
+body
+    opacity: 1

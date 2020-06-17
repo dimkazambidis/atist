@@ -1,0 +1,45 @@
+/*=============  Footer  =============*/
+.site-footer
+    flex: 0 0 auto
+    background-color: #fff
+
+.site-footer__item
+    >div
+        display: table
+        height: 100%
+        width: 100%
+        >div
+            display: table-cell
+            vertical-align: middle
+
+.site-footer-top-bar
+    padding-top: 15px
+    padding-bottom: 15px
+
+.site-footer-nav
+    li
+        display: inline-block
+        margin-right: 35px
+        &:last-child
+            margin-right: 0
+        a
+            +fz(16)
+            color: $color-text
+
+.site-footer-pay
+    li
+        display: inline-block
+        margin-right: 15px
+        &:last-child
+            margin-right: 0
+    img, source, svg
+        width: auto
+        height: 20px
+
+.site-footer-bottom-bar
+    padding-top: 12px
+    padding-bottom: 12px
+    background-color: #eaeff3
+    color: $color-text-light
+    a
+        color: $color-text-light
