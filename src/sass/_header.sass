@@ -16,10 +16,9 @@
     padding-bottom: 20px
 
 .site-header__logo
-    img, source
-        max-height: 24px
+    img, source, svg
         height: 24px
-        width: auto
+        width: 144px
 
 .site-header__city
     a
@@ -27,15 +26,10 @@
         text-decoration: none
         font-weight: 500
         transition: color .15s
-        &::after
-            content: "\e902"
-            font-family: "Icomoon"
-            font-weight: 400
+        .icon
             +fz(12)
             display: inline-block
-            position: relative
-            top: 1px
-            margin-left: 6px
+            margin-left: 4px
 
 .site-header__btn
     text-align: right
@@ -45,7 +39,6 @@
 
 .site-header-nav-bar
     background-color: $color-base
-
 
 .site-header-nav
     ul
@@ -84,6 +77,6 @@
     text-decoration: none
     &:hover
         text-decoration: none
-    span
+    svg
         +fz(28)
         display: block

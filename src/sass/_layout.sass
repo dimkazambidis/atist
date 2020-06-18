@@ -28,7 +28,9 @@
 
 .site-search__input
     input[type="text"]
-        border-radius: 20px 0 0 20px
+        +element-geometry(40)
+        border-top-right-radius: 0
+        border-bottom-right-radius: 0
 
 .site-search__btn
     -webkit-box-flex: 0
@@ -37,7 +39,9 @@
     flex: 0 0 230px
     max-width: 230px
     button
-        border-radius: 0 20px 20px 0
+        +element-geometry(40)
+        border-top-left-radius: 0
+        border-bottom-left-radius: 0
         width: 100%
 
 .site-aside-wrap

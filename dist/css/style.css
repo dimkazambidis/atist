@@ -32,62 +32,6 @@
   src: url("../fonts/Roboto/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: "Icomoon";
-  font-weight: 400;
-  font-style: normal;
-  src: url("../fonts/Icomoon/icomoon.eot");
-  src: url("../fonts/Icomoon/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/Icomoon/icomoon.woff") format("woff"), url("../fonts/Icomoon/icomoon.ttf") format("truetype");
-}
-
-[class^="icon-"], [class*=" icon-"] {
-  font-family: 'icomoon' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-plus:before {
-  content: "\e900";
-}
-
-.icon-add:before {
-  content: "\e901";
-}
-
-.icon-angle-down:before {
-  content: "\e902";
-}
-
-.icon-angle-left:before {
-  content: "\e905";
-}
-
-.icon-angle-right:before {
-  content: "\e906";
-}
-
-.icon-angle-up:before {
-  content: "\e907";
-}
-
-.icon-burger:before {
-  content: "\e903";
-}
-
-.icon-filter:before {
-  content: "\e904";
-}
-
-.icon-search:before {
-  content: "\e908";
-}
-
 /*===============  Libs  ===============*/
 /*!
  * Bootstrap Reboot v4.5.0 (https://getbootstrap.com/)
@@ -5353,6 +5297,58 @@ html {
   opacity: .5;
 }
 
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+.icon-add {
+  font-size: 3.2rem;
+  width: 1em;
+}
+
+.icon-angle-down {
+  font-size: 3.2rem;
+  width: 1em;
+}
+
+.icon-angle-left {
+  font-size: 3.2rem;
+  width: 1em;
+}
+
+.icon-angle-right {
+  font-size: 3.2rem;
+  width: 1em;
+}
+
+.icon-angle-up {
+  font-size: 3.2rem;
+  width: 1em;
+}
+
+.icon-burger {
+  font-size: 3.2rem;
+  width: 0.875em;
+}
+
+.icon-filter {
+  font-size: 3.2rem;
+  width: 0.875em;
+}
+
+.icon-plus {
+  font-size: 3.2rem;
+  width: 1em;
+}
+
+.icon-search {
+  font-size: 3.2rem;
+  width: 1em;
+}
+
 /*===============  Base  ===============*/
 * {
   -webkit-box-sizing: border-box;
@@ -5660,7 +5656,7 @@ button.btn {
   text-align: center;
   font-size: 1.14286rem;
   color: #fff;
-  padding: 5.5px 15px;
+  padding: 7px 15px;
   text-decoration: none;
   letter-spacing: .015em;
   -webkit-transition: background-color .15s, border-color .15s, color .15s;
@@ -5680,7 +5676,7 @@ button.btn *[class*=" icon-"] {
   display: inline-block;
   position: relative;
   line-height: 0;
-  top: 4px;
+  top: -1px;
 }
 
 a.btn *[class^="icon-"].icon_before,
@@ -5691,7 +5687,7 @@ input[type="button"].btn *[class^="icon-"].icon_before,
 input[type="button"].btn *[class*=" icon-"].icon_before,
 button.btn *[class^="icon-"].icon_before,
 button.btn *[class*=" icon-"].icon_before {
-  margin-right: 10px;
+  margin-right: 6px;
 }
 
 a.btn *[class^="icon-"].icon_after,
@@ -5702,7 +5698,7 @@ input[type="button"].btn *[class^="icon-"].icon_after,
 input[type="button"].btn *[class*=" icon-"].icon_after,
 button.btn *[class^="icon-"].icon_after,
 button.btn *[class*=" icon-"].icon_after {
-  margin-left: 10px;
+  margin-left: 6px;
 }
 
 a.btn.btn_inline,
@@ -5808,7 +5804,6 @@ input[type="button"].btn.btn_small *[class*=" icon-"],
 button.btn.btn_small *[class^="icon-"],
 button.btn.btn_small *[class*=" icon-"] {
   font-size: 1.28571rem;
-  top: 3px;
 }
 
 a.btn.btn_small *[class^="icon-"].icon_before,
@@ -5819,7 +5814,7 @@ input[type="button"].btn.btn_small *[class^="icon-"].icon_before,
 input[type="button"].btn.btn_small *[class*=" icon-"].icon_before,
 button.btn.btn_small *[class^="icon-"].icon_before,
 button.btn.btn_small *[class*=" icon-"].icon_before {
-  margin-right: 8px;
+  margin-right: 4px;
 }
 
 a.btn.btn_small *[class^="icon-"].icon_after,
@@ -5830,7 +5825,7 @@ input[type="button"].btn.btn_small *[class^="icon-"].icon_after,
 input[type="button"].btn.btn_small *[class*=" icon-"].icon_after,
 button.btn.btn_small *[class^="icon-"].icon_after,
 button.btn.btn_small *[class*=" icon-"].icon_after {
-  margin-left: 8px;
+  margin-left: 4px;
 }
 
 a.btn:focus,
@@ -5975,10 +5970,9 @@ button.btn:focus {
   padding-bottom: 20px;
 }
 
-.site-header__logo img, .site-header__logo source {
-  max-height: 24px;
+.site-header__logo img, .site-header__logo source, .site-header__logo svg {
   height: 24px;
-  width: auto;
+  width: 144px;
 }
 
 .site-header__city a {
@@ -5990,15 +5984,10 @@ button.btn:focus {
   transition: color .15s;
 }
 
-.site-header__city a::after {
-  content: "\e902";
-  font-family: "Icomoon";
-  font-weight: 400;
+.site-header__city a .icon {
   font-size: 0.85714rem;
   display: inline-block;
-  position: relative;
-  top: 1px;
-  margin-left: 6px;
+  margin-left: 4px;
 }
 
 .site-header__btn {
@@ -6063,7 +6052,7 @@ button.btn:focus {
   text-decoration: none;
 }
 
-.site-header-burger span {
+.site-header-burger svg {
   font-size: 2rem;
   display: block;
 }
@@ -6100,8 +6089,13 @@ button.btn:focus {
 }
 
 .site-search__input input[type="text"] {
-  -webkit-border-radius: 20px 0 0 20px;
-          border-radius: 20px 0 0 20px;
+  height: 40px;
+  -webkit-border-radius: 20px;
+          border-radius: 20px;
+  -webkit-border-top-right-radius: 0;
+          border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+          border-bottom-right-radius: 0;
 }
 
 .site-search__btn {
@@ -6113,8 +6107,13 @@ button.btn:focus {
 }
 
 .site-search__btn button {
-  -webkit-border-radius: 0 20px 20px 0;
-          border-radius: 0 20px 20px 0;
+  height: 40px;
+  -webkit-border-radius: 20px;
+          border-radius: 20px;
+  -webkit-border-top-left-radius: 0;
+          border-top-left-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+          border-bottom-left-radius: 0;
   width: 100%;
 }
 
@@ -6271,6 +6270,7 @@ button.btn:focus {
     display: block;
   }
   .site-search__input input[type="text"] {
+    height: 40px;
     -webkit-border-radius: 20px;
             border-radius: 20px;
   }
@@ -6279,6 +6279,7 @@ button.btn:focus {
     max-width: 100%;
   }
   .site-search__btn button {
+    height: 40px;
     -webkit-border-radius: 20px;
             border-radius: 20px;
     width: 100%;

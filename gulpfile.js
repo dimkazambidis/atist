@@ -12,7 +12,8 @@ const path = {
         inc: srcFolder + '/**/*.html',
         sass: srcFolder + '/sass/**/*.sass',
         js: srcFolder + '/js/**/*.js',
-        img: srcFolder + '/images/**/*.{jpg,png,svg,gif,ico,webp}',
+        img: srcFolder + '/images/**/*.{jpg,png,gif,ico,webp}',
+        svg: srcFolder + '/images/*.svg',
         fonts: srcFolder + '/fonts/**/*.{eot,svg,ttf,woff}'
     },
     dist: {
@@ -37,6 +38,11 @@ const gulp       = require('gulp'),
     imagemin     = require('gulp-imagemin'),
     webp         = require('gulp-webp'),
     webpHtml     = require('gulp-webp-html'),
+    embedSvg     = require('gulp-embed-svg'),
+    svgSprite    = require('gulp-svg-sprite'),
+	svgmin       = require('gulp-svgmin'),
+	cheerio      = require('gulp-cheerio'),
+	replace      = require('gulp-replace'),
     cache        = require('gulp-cache'),
     autoprefixer = require('gulp-autoprefixer'),
     include      = require('gulp-file-include');
@@ -77,6 +83,7 @@ function jsLibFunc() {
     return gulp.src([
         srcFolder + '/libs/vue/dist/vue.min.js',
         srcFolder + '/libs/imagesloaded/imagesloaded.pkgd.min.js',
+        srcFolder + '/libs/svgxuse/svgxuse.min.js',
         srcFolder + '/libs/inputmask/dist/inputmask.min.js',
         srcFolder + '/libs/choices/public/assets/scripts/choices.min.js',
         distFolder + '/js/scripts.js'
@@ -124,6 +131,10 @@ function htmlFunc() {
         basepath: '@file'
     }))
     .pipe(webpHtml())
+    .pipe(embedSvg({
+        root: './src',
+        selectors: 'svg[src*=".svg"]'
+    }))
     .pipe(gulp.dest(distFolder + '/'))
     .pipe(browserSync.stream());
 }
@@ -137,16 +148,67 @@ function imgFunc() {
         quality: 70
     }))
     .pipe(gulp.dest(path.dist.img))
-    .pipe(gulp.src(path.src.img))
-    .pipe(cache(imagemin([
+    .pipe(gulp.src([
+        path.src.img,
+        path.src.svg
+    ]))
+    .pipe(imagemin([
         imagemin.gifsicle({interlaced: true}),
         imagemin.mozjpeg({progressive: true}),
-        imagemin.optipng({optimizationLevel: 3}),
+        imagemin.optipng({optimizationLevel: 3})
+    ]))
+    .pipe(gulp.dest(path.dist.img))
+    .pipe(browserSync.stream());
+}
+
+/***************************
+  Sprites
+***************************/
+function spriteFunc() {
+    return gulp.src('src/images/symbols/**/*.svg')
+    .pipe(svgmin({
+        js2svg: {
+            pretty: true
+        }
+    }))
+    .pipe(cheerio({
+        run: function ($) {
+            $('[fill]').removeAttr('fill');
+            $('[stroke]').removeAttr('stroke');
+            $('[style]').removeAttr('style');
+        },
+        parserOptions: {xmlMode: true}
+    }))
+    .pipe(replace('&gt;', '>'))
+    .pipe(svgSprite({
+        mode: {
+            symbol: {
+                sprite: "../sprite.svg",
+                render: {
+                    scss: {
+                        dest: '../../../sass/_sprite.scss',
+                        template: '_sprite_template.scss'
+                    }
+                }
+            }
+        }
+    }))
+    .pipe(gulp.dest(srcFolder + '/images/'));
+}
+
+/***************************
+  Svg minification
+***************************/
+function svgFunc() {
+    return gulp.src([
+        srcFolder + '/images/source/**/*.svg'
+    ])
+    .pipe(imagemin([
         imagemin.svgo({
             plugins: [
                 {removeViewBox: false}
-    ]})])))
-    .pipe(gulp.dest(path.dist.img))
+    ]})]))
+    .pipe(gulp.dest(srcFolder + '/images'))
     .pipe(browserSync.stream());
 }
 
@@ -186,3 +248,5 @@ function clearcacheFunc() {
 exports.default = gulp.series(cleanFunc, gulp.parallel(htmlFunc, sassFunc, jsFunc, imgFunc, fontsFunc, browserSyncFunc, watchFunc));
 exports.build = gulp.series(clearcacheFunc, cleanFunc, gulp.parallel(htmlFunc, sassFunc, jsFunc, imgFunc, fontsFunc));
 exports.clearcache = clearcacheFunc;
+exports.sprite = spriteFunc;
+exports.svg = svgFunc;
