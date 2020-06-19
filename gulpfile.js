@@ -87,7 +87,6 @@ function jsLibFunc() {
         // srcFolder + '/libs/inputmask/dist/inputmask.min.js',
         //srcFolder + '/libs/choices/public/assets/scripts/choices.min.js',
         srcFolder + '/libs/vue-multiselect/dist/vue-multiselect.min.js',
-        //srcFolder + '/libs/vue-masked-input/dist/maskedInput.js',
         distFolder + '/js/scripts.js'
     ])
     .pipe(concat('scripts.js'))
@@ -185,10 +184,10 @@ function spriteFunc() {
     .pipe(svgSprite({
         mode: {
             symbol: {
-                sprite: "../sprite.svg",
+                sprite: '../sprite.svg',
                 render: {
                     scss: {
-                        dest: '../../../sass/_sprite.scss',
+                        dest: '../../sass/_sprite.scss',
                         template: '_sprite_template.scss'
                     }
                 }
