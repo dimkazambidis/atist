@@ -5,7 +5,7 @@
                 <div class="container">
                     <div class="site-search__wrap">
                         <div class="site-search__input">
-                            <input type="text">
+                            <input type="text" class="npt">
                         </div>
                         <div class="site-search__btn">
                             <button class="btn">
@@ -20,34 +20,78 @@
             </div>
 
             <div class="container site-content">
-                <main class="site-main">1</main>
-                <aside class="site-aside" v-if="!phoneDevice">
-                    <div class="site-aside-wrap">
-                        <div class="aside-section site-aside-categories">
-                            <h4>Категории</h4>
-                            <ul class="unstyled">
-                                <li><a href="#">Вывоз мусора <span>15</span></a></li>
-                                <li><a href="#">Квартирный переезд <span>24</span></a></li>
-                                <li><a href="#">Перевозка мебели <span>53</span></a></li>
-                                <li><a href="#">Офисный переезд <span>17</span></a></li>
-                                <li><a href="#">Дачные переезды <span>64</span></a></li>
-                                <li><a href="#">Перевозка вещей <span>11</span></a></li>
-                                <li><a href="#">Переезды с грузчиками <span>97</span></a></li>
-                                <li><a href="#">Перевозка дивана <span>23</span></a></li>
-                                <li><a href="#">Перевозка холодильника <span>778</span></a></li>
-                                <li><a href="#">Перевозка пианино <span>12</span></a></li>
-                                <li><a href="#">Рефрижераторы <span>5</span></a></li>
-                                <li><a href="#">Негабаритные перевозки <span>11</span></a></li>
-                                <li><a href="#">Грузоперевозка по России <span>58</span></a></li>
-                            </ul>
-                        </div>
+                <main class="site-main">
+                    <section class="breadcrumbs">
+                        <ul class="unstyled" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+                            <li itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+                                <a href="index.html" itemprop="item" title="Грузоперевозки Новосибирск">
+                                    <span itemprop="name">Грузоперевозки Новосибирск</span>
+                                </a>
+                                <meta itemprop="position" content="1">
+                            </li>
 
-                        <div class="aside-section site-aside-categories">
-                            <h4>Фильтр</h4>
-                            Тут будет фильтр!
+                            <li itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+                                <span data-ftid="header_breadcrumb-item">Квартирный переезд</span>
+                                <meta itemprop="position" content="2">
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <section class="page-header">
+                        <h1>Грузовые перевозки в Новосибирске на газели и подобных авто</h1>
+                        <div class="page-header-text">
+                            <p>Сайт <strong>АТИСТ.РУ</strong> – проверенные объявления по грузовым перевозкам, без посредников! Исполнители размещают объявления, где указывают перечень услуг и дополнительные особенности своей работы.</p>
                         </div>
-                    </div>
-                </aside>
+                    </section>
+
+                    <section class="offers">
+                        <div class="offers-filter">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="input-container">
+                                        <template>
+                                            <multiselect
+                                                v-model="inputs.filter.value"
+                                                label="key"
+                                                placeholder="Быстрый фильтр"
+                                                :options="[
+                                                    { value: '#', key: 'По городу' },
+                                                    { value: '#', key: 'Межгород' },
+                                                    { value: '#', key: 'По России' }
+                                                ]">
+                                            </multiselect>
+                                        </template>
+                                    </div>
+                                </div>
+
+                                <div class="col-auto">
+                                    <div class="input-container">
+                                        <template>
+                                            <multiselect
+                                                v-model="inputs.sort.value"
+                                                label="key"
+                                                placeholder="Сортировать"
+                                                :options="[
+                                                    { value: '#', key: 'Сначала дешевле' },
+                                                    { value: '#', key: 'Сначала дороже' },
+                                                    { value: '#', key: 'По рейтингу' },
+                                                    { value: '#', key: 'По стажу' },
+                                                    { value: '#', key: 'По отзывам' }
+                                                ]">
+                                            </multiselect>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="offers-list">
+                            <div class="offers-list-wrap"></div>
+                            <div class="offers-list-pagination"></div>
+                        </div>
+                    </section>
+                </main>
+
+                @include('parts/aside.html')
             </div>
         </div>
 

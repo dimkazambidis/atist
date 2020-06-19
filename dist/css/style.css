@@ -5417,6 +5417,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 1.71429rem;
+  line-height: 1.2;
 }
 
 h2 {
@@ -5474,6 +5475,9 @@ ul.unstyled li::before {
 
 a {
   color: #fd6f57;
+  -webkit-transition: color .15s;
+  -o-transition: color .15s;
+  transition: color .15s;
 }
 
 a:hover {
@@ -5486,8 +5490,10 @@ a:hover {
   position: relative;
 }
 
-input[type="text"],
-input[type="number"] {
+input[type="text"].npt,
+input[type="number"].npt,
+input[type="tel"].npt,
+input[type="email"].npt {
   display: inline-block;
   height: 40px;
   -webkit-border-radius: 20px;
@@ -5502,14 +5508,16 @@ input[type="number"] {
   transition: background-color .15s, border-color .15s;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus {
+input[type="text"].npt:focus,
+input[type="number"].npt:focus,
+input[type="tel"].npt:focus,
+input[type="email"].npt:focus {
   outline: none;
   background-color: #fff;
   border-color: #4784b3;
 }
 
-textarea {
+textarea .npt {
   display: inline-block;
   width: 100%;
   background-color: #f5f9fc;
@@ -5522,10 +5530,14 @@ textarea {
   transition: background-color .15s, border-color .15s;
 }
 
-textarea:focus {
+textarea .npt:focus {
   outline: none;
   background-color: #fff;
   border-color: #4784b3;
+}
+
+.multiselect {
+  min-width: 200px;
 }
 
 .choices[data-type*=select-one] .choices__inner {
@@ -5906,6 +5918,7 @@ button.btn:focus {
 }
 
 .site-content {
+  padding-top: 15px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5941,12 +5954,11 @@ button.btn:focus {
 }
 
 .site-aside {
-  padding-top: 30px;
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 250px;
-  -ms-flex: 0 0 250px;
-  flex: 0 0 250px;
-  max-width: 250px;
+  -webkit-flex: 0 0 280px;
+  -ms-flex: 0 0 280px;
+  flex: 0 0 280px;
+  max-width: 280px;
 }
 
 /*==============  Header  ==============*/
@@ -6057,6 +6069,40 @@ button.btn:focus {
   display: block;
 }
 
+/*==============  Aside  ==============*/
+.site-aside-wrap {
+  background-color: #fff;
+  padding: 15px;
+}
+
+.aside-section {
+  margin-bottom: 15px;
+}
+
+.aside-section h4 {
+  margin-bottom: 10px;
+}
+
+.aside-section:last-child {
+  margin-bottom: 0;
+}
+
+.site-aside-categories ul li {
+  margin-bottom: 8px;
+}
+
+.site-aside-categories ul li a {
+  color: #3a4b5b;
+  display: block;
+  position: relative;
+}
+
+.site-aside-categories ul li a span {
+  position: absolute;
+  right: 0;
+  color: #90A1A9;
+}
+
 /*==============  Layout  ==============*/
 .site-search {
   background-color: #3875a2;
@@ -6089,9 +6135,6 @@ button.btn:focus {
 }
 
 .site-search__input input[type="text"] {
-  height: 40px;
-  -webkit-border-radius: 20px;
-          border-radius: 20px;
   -webkit-border-top-right-radius: 0;
           border-top-right-radius: 0;
   -webkit-border-bottom-right-radius: 0;
@@ -6100,16 +6143,13 @@ button.btn:focus {
 
 .site-search__btn {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 230px;
-  -ms-flex: 0 0 230px;
-  flex: 0 0 230px;
-  max-width: 230px;
+  -webkit-flex: 0 0 260px;
+  -ms-flex: 0 0 260px;
+  flex: 0 0 260px;
+  max-width: 260px;
 }
 
 .site-search__btn button {
-  height: 40px;
-  -webkit-border-radius: 20px;
-          border-radius: 20px;
   -webkit-border-top-left-radius: 0;
           border-top-left-radius: 0;
   -webkit-border-bottom-left-radius: 0;
@@ -6117,43 +6157,47 @@ button.btn:focus {
   width: 100%;
 }
 
-.site-aside-wrap {
-  background-color: #fff;
-  padding: 15px;
-}
-
-.aside-section {
-  margin-bottom: 15px;
-}
-
-.aside-section h4 {
-  margin-bottom: 10px;
-}
-
-.aside-section:last-child {
-  margin-bottom: 0;
-}
-
-.site-aside-categories ul li {
-  margin-bottom: 8px;
-  font-size: 0.85714rem;
-}
-
-.site-aside-categories ul li a {
-  color: #3a4b5b;
-  display: block;
-  position: relative;
-}
-
-.site-aside-categories ul li a span {
-  position: absolute;
-  right: 0;
-  color: #90A1A9;
-}
-
 .card {
   padding: 20px 15px;
   background-color: #fff;
+}
+
+.breadcrumbs {
+  margin-bottom: 10px;
+}
+
+.breadcrumbs ul li {
+  display: inline-block;
+  color: #90A1A9;
+  font-size: 0.85714rem;
+}
+
+.breadcrumbs ul li::after {
+  content: "/";
+  display: inline-block;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.breadcrumbs ul li:last-child::after {
+  content: none;
+}
+
+.breadcrumbs ul li a {
+  color: #90A1A9;
+}
+
+.breadcrumbs ul li a:hover {
+  text-decoration: none;
+  color: #3a4b5b;
+}
+
+.page-header-text {
+  padding-top: 10px;
+}
+
+.offers-filter .multiselect {
+  width: 200px;
 }
 
 /*=============  Footer  =============*/

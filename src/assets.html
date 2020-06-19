@@ -54,34 +54,40 @@
                                 <div class="row">
                                     <div class="col-3">
                                         <div class="input-container">
-                                            <input type="text" placeholder="Ваше имя">
+                                            <input type="text" class="npt" placeholder="Ваше имя">
                                         </div>
                                     </div>
                                     <div class="col-3">
                                         <div class="input-container">
-                                            <input type="text" class="input-tel" placeholder="Ваш телефон">
+                                            <input type="tel" class="npt" placeholder="Ваш телефон">
                                         </div>
                                     </div>
                                     <div class="col-3">
                                         <div class="input-container">
-                                            <input type="number" placeholder="Ваш возраст">
+                                            <input type="number" class="npt" placeholder="Ваш возраст">
                                         </div>
                                     </div>
                                     <div class="col-3">
                                         <div class="input-container">
-                                            <select name="" id="" class="input-select">
-                                                <option value="">По умолчанию</option>
-                                                <option value="Сначала дешевле">Сначала дешевле</option>
-                                                <option value="Сначала дороже">Сначала дороже</option>
-                                                <option value="По рейтингу">По рейтингу</option>
-                                                <option value="По стажу">По стажу</option>
-                                                <option value="По отзывам">По отзывам</option>
-                                            </select>
+                                            <template>
+                                                <multiselect
+                                                    v-model="inputs.filter.value"
+                                                    :options="['aaa', 'bbb']">
+                                                </multiselect>
+                                            </template>
+                                            
+
+                                            <template>
+                                                <multiselect
+                                                    v-model="inputs.sort.value"
+                                                    :options="['111', '222']">
+                                                </multiselect>
+                                            </template>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="input-container">
-                                            <textarea name="" id="" cols="30" rows="10" placeholder="Напишите отзыв"></textarea>
+                                            <textarea class="npt" name="" id="" cols="30" rows="10" placeholder="Напишите отзыв"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-3">
@@ -117,10 +123,4 @@
             </main>
         </div>
 
-        @include('parts/footer.html')
-    </div>
-
-    <link rel="stylesheet" href="css/style.min.css">
-    <script src="js/scripts.min.js"></script>
-</body>
-</html>
+@include('parts/footer.html')

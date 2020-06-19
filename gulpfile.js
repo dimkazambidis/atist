@@ -84,8 +84,10 @@ function jsLibFunc() {
         srcFolder + '/libs/vue/dist/vue.min.js',
         srcFolder + '/libs/imagesloaded/imagesloaded.pkgd.min.js',
         srcFolder + '/libs/svgxuse/svgxuse.min.js',
-        srcFolder + '/libs/inputmask/dist/inputmask.min.js',
-        srcFolder + '/libs/choices/public/assets/scripts/choices.min.js',
+        // srcFolder + '/libs/inputmask/dist/inputmask.min.js',
+        //srcFolder + '/libs/choices/public/assets/scripts/choices.min.js',
+        srcFolder + '/libs/vue-multiselect/dist/vue-multiselect.min.js',
+        //srcFolder + '/libs/vue-masked-input/dist/maskedInput.js',
         distFolder + '/js/scripts.js'
     ])
     .pipe(concat('scripts.js'))
@@ -130,7 +132,7 @@ function htmlFunc() {
         prefix: '@',
         basepath: '@file'
     }))
-    .pipe(webpHtml())
+    //.pipe(webpHtml())
     .pipe(embedSvg({
         root: './src',
         selectors: 'svg[src*=".svg"]'

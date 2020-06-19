@@ -5,6 +5,7 @@ h1, h2, h3, h4, h5, h6
 
 h1
     +fz(24)
+    line-height: 1.2
 
 h2
     +fz(24)
@@ -47,6 +48,7 @@ ul
 
 a
     color: $color-link
+    transition: color .15s
     &:hover
         color: darken($color-link, 10%)
 
@@ -56,32 +58,39 @@ a
     position: relative
 
 input[type="text"],
-input[type="number"]
-    display: inline-block
-    +element-geometry(40)
-    width: 100%
-    background-color: $color-input
-    border: 1px solid #ced8e2
-    padding-left: 15px
-    padding-right: 15px
-    transition: background-color .15s, border-color .15s
-    &:focus
-        outline: none
-        background-color: #fff
-        border-color: $color-base
+input[type="number"],
+input[type="tel"],
+input[type="email"]
+    &.npt
+        display: inline-block
+        +element-geometry(40)
+        width: 100%
+        background-color: $color-input
+        border: 1px solid #ced8e2
+        padding-left: 15px
+        padding-right: 15px
+        transition: background-color .15s, border-color .15s
+        &:focus
+            outline: none
+            background-color: #fff
+            border-color: $color-base
 
 textarea
-    display: inline-block
-    width: 100%
-    background-color: $color-input
-    border: 1px solid #ced8e2
-    padding: 8.5px 15px
-    border-radius: 8px
-    transition: background-color .15s, border-color .15s
-    &:focus
-        outline: none
-        background-color: #fff
-        border-color: $color-base
+    .npt
+        display: inline-block
+        width: 100%
+        background-color: $color-input
+        border: 1px solid #ced8e2
+        padding: 8.5px 15px
+        border-radius: 8px
+        transition: background-color .15s, border-color .15s
+        &:focus
+            outline: none
+            background-color: #fff
+            border-color: $color-base
+
+.multiselect
+    min-width: 200px
 
 .choices[data-type*=select-one]
     .choices__inner

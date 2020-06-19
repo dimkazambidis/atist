@@ -1,4 +1,5 @@
 /*==============  Layout  ==============*/
+
 .site-search
     background-color: $color-base-dark
 
@@ -28,47 +29,48 @@
 
 .site-search__input
     input[type="text"]
-        +element-geometry(40)
         border-top-right-radius: 0
         border-bottom-right-radius: 0
 
 .site-search__btn
     -webkit-box-flex: 0
-    -webkit-flex: 0 0 230px
-    -ms-flex: 0 0 230px
-    flex: 0 0 230px
-    max-width: 230px
+    -webkit-flex: 0 0 260px
+    -ms-flex: 0 0 260px
+    flex: 0 0 260px
+    max-width: 260px
     button
-        +element-geometry(40)
         border-top-left-radius: 0
         border-bottom-left-radius: 0
         width: 100%
 
-.site-aside-wrap
-    background-color: #fff
-    padding: 15px
-
-.aside-section
-    margin-bottom: 15px
-    h4
-        margin-bottom: 10px
-    &:last-child
-        margin-bottom: 0
-
-.site-aside-categories
-    ul
-        li
-            margin-bottom: 8px
-            +fz(12)
-            a
-                color: $color-text
-                display: block
-                position: relative
-                span
-                    position: absolute
-                    right: 0
-                    color: $color-text-light
-
 .card
     padding: 20px 15px
     background-color: #fff
+
+.breadcrumbs
+    margin-bottom: 10px
+    ul
+        li
+            display: inline-block
+            color: $color-text-light
+            +fz(12)
+            &::after
+                content: "/"
+                display: inline-block
+                margin-left: 4px
+                margin-right: 4px
+            &:last-child
+                &::after
+                    content: none
+            a
+                color: $color-text-light
+                &:hover
+                    text-decoration: none
+                    color: $color-text
+
+.page-header-text
+    padding-top: 10px
+
+.offers-filter
+    .multiselect
+        width: 200px

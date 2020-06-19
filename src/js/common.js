@@ -3,22 +3,30 @@
  */
 (function() {
     //===== Input mask telephone =====//
-    const inputTel = document.querySelector('.input-tel');
+    //const inputTel = document.querySelector('.input-tel');
 
-    if ( inputTel ) {
-        Inputmask({'mask': '+7 (999) 999-9999'}).mask(inputTel);
-    }
+    // if ( inputTel ) {
+    //     Inputmask({'mask': '+7 (999) 999-9999'}).mask(inputTel);
+    // }
 
     //===== Dropdawn select =====//
-    const inputSelectEl = document.querySelector('.input-select');
+    // const inputSelectEl = document.querySelector('.input-select');
 
-    if ( inputSelectEl ) {
-        new Choices(inputSelectEl, {
-            searchEnabled: false,
-            itemSelectText: '',
-            shouldSort: false
-        });
-    }
+    // new Choices(inputSelectEl, {
+    //             searchEnabled: false,
+    //             itemSelectText: '',
+    //             shouldSort: false
+    //         });
+
+    // if ( inputSelectEl.length ) {
+    //     for ( let el of inputSelectEl ) {
+    //         new Choices(el, {
+    //             searchEnabled: false,
+    //             itemSelectText: '',
+    //             shouldSort: false
+    //         });
+    //     }
+    // }
 
     //===== Site Vue =====//
     Vue.config.devtools = true;
@@ -28,11 +36,22 @@
     let dataSite = {
         phoneDevice: ( window.innerWidth < 768 ) ? true : false,
         tabletDevice: ( window.innerWidth < 1024  ) ? true : false,
-        mobileMenu: false
+        mobileMenu: false,
+        inputs: {
+            filter: {
+                value: ''
+            },
+            sort: {
+                value: ''
+            }
+        }
     }
 
     let site = new Vue({
         el: '#site',
+        components: {
+            Multiselect: window.VueMultiselect.default
+        },
         data: dataSite,
         methods: {
             watchSiteSize: function() {
@@ -51,7 +70,6 @@
             }
         },
         beforeCreate: function() {
-
             //For debugging
             if (APP_LOG_LIFECYCLE_EVENTS)
                 console.log('beforeCreate');
@@ -64,31 +82,26 @@
                 console.log('created');
         },
         beforeMount: function() {
-            
             //For debugging
             if (APP_LOG_LIFECYCLE_EVENTS)
                 console.log('beforeMount');
         },
         mounted: function() {
-            
             //For debugging
             if (APP_LOG_LIFECYCLE_EVENTS)
                 console.log('mounted');
         },
         beforeUpdate: function() {
-            
             //For debugging
             if (APP_LOG_LIFECYCLE_EVENTS)
                 console.log('beforeUpdate');
         },
         updated: function() {
-           
             //For debugging
             if (APP_LOG_LIFECYCLE_EVENTS)
                 console.log('updated');
         },
         beforeDestroy: function() {
-            
             //For debugging
             if (APP_LOG_LIFECYCLE_EVENTS)
                 console.log('beforeDestroy');
