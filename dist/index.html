@@ -184,43 +184,195 @@
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="input-container">
-                                        <template>
-                                            <multiselect
-                                                v-model="inputs.filter.value"
-                                                label="key"
-                                                placeholder="Быстрый фильтр"
-                                                :options="[
-                                                    { value: '#', key: 'По городу' },
-                                                    { value: '#', key: 'Межгород' },
-                                                    { value: '#', key: 'По России' }
-                                                ]">
-                                            </multiselect>
-                                        </template>
+                                        <vue-multiselect
+                                            v-model="inputs.filter.value"
+                                            label="key"
+                                            placeholder="Быстрый фильтр"
+                                            :options="[
+                                                { value: '#', key: 'По городу' },
+                                                { value: '#', key: 'Межгород' },
+                                                { value: '#', key: 'По России' }
+                                            ]">
+                                        </vue-multiselect>
                                     </div>
                                 </div>
 
                                 <div class="col-auto">
                                     <div class="input-container">
-                                        <template>
-                                            <multiselect
-                                                v-model="inputs.sort.value"
-                                                label="key"
-                                                placeholder="Сортировать"
-                                                :options="[
-                                                    { value: '#', key: 'Сначала дешевле' },
-                                                    { value: '#', key: 'Сначала дороже' },
-                                                    { value: '#', key: 'По рейтингу' },
-                                                    { value: '#', key: 'По стажу' },
-                                                    { value: '#', key: 'По отзывам' }
-                                                ]">
-                                            </multiselect>
-                                        </template>
+                                        <vue-multiselect
+                                            v-model="inputs.sort.value"
+                                            label="key"
+                                            placeholder="Сортировать"
+                                            :options="[
+                                                { value: '#', key: 'Сначала дешевле' },
+                                                { value: '#', key: 'Сначала дороже' },
+                                                { value: '#', key: 'По рейтингу' },
+                                                { value: '#', key: 'По стажу' },
+                                                { value: '#', key: 'По отзывам' }
+                                            ]">
+                                        </vue-multiselect>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="offers-list">
-                            <div class="offers-list-wrap"></div>
+                            <div class="offers-list-wrap">
+                                <!-- <offer-card
+                                    title = "Грузоперевозки лично город/межгород (24 часа)"
+                                    logo = "images/logo_offer.png"
+                                    date = "20.04.2020"
+                                    update = "22.06.2020"
+                                    :rating = "8.7"
+                                    location = "Новосибирск"
+                                    :prices = "[
+                                        {key: '', val: '450 руб/час'},
+                                        {key: 'Грузчики:', val: '200 руб/час'},
+                                        {key: 'Межгород:', val: '20 руб/км'}
+                                    ]"
+                                    tel = "+7 (913) 060 88-33"
+                                    :gabarits = "[
+                                        {key: 'Вес:', val: '3т'},
+                                        {key: 'Длинна:', val: '5м'},
+                                        {key: 'Ширина:', val: '2м'},
+                                        {key: 'Высота:', val: '2м'}
+                                    ]"
+                                    :categories = "[
+                                        {name: 'Вывоз мусора', link: '#'},
+                                        {name: 'Переезды', link: '#'},
+                                        {name: 'Межгород', link: '#'},
+                                        {name: 'Перевозка мебели', link: '#'},
+                                        {name: 'Перевозка пианино', link: '#'},
+                                        {name: 'Перевозка холодильника', link: '#'},
+                                        {name: 'Перевозка продуктов', link: '#'}
+                                    ]"
+                                    text = "Грузоперевозки, межгород, переезд в другой город, квартирно-офиснные переезды, доставка, вывоз мусора, грузчики, быстрая подача.">
+                                </offer-card> -->
+
+                                <div class="offers-item">
+                                    <div class="card">
+                                        <div class="card-wrapper">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <figure class="offers-item__img">
+                                                        <img src="images/logo_offer.png" alt="" width="320" height="320">
+                                                    </figure>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="offers-item__header">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="offers-item__date" v-else>
+                                                                    <time>20.04.2020</time>
+                                                                    <svg class="icon icon-arrow-up" v-if="update">
+                                                                        <use xlink:href="images/sprite.svg#arrow-up"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                <h3>Грузоперевозки лично город/межгород (24 часа)</h3>
+                                                                <div class="offers-item__location">
+                                                                    <svg class="icon icon-geo">
+                                                                        <use xlink:href="images/sprite.svg#geo"></use>
+                                                                    </svg>
+                                                                    Новосибирск
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="offers-item__rating">
+                                                                    <svg class="icon icon-star">
+                                                                        <use xlink:href="images/sprite.svg#star"></use>
+                                                                    </svg>
+                                                                    <span>9.9</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                
+                                                    <div class="offers-item__action">
+                                                        <div class="row">
+                                                            <div class="col-12 col-md">
+                                                                <div class="offers-item__price">
+                                                                    <div class="offers-item__price-item">
+                                                                        <span>450 руб/час</span>
+                                                                    </div>
+                                                                    <div class="offers-item__price-item">
+                                                                        <span>Грузчики:</span>
+                                                                        <span>200 руб/час</span>
+                                                                    </div>
+                                                                    <div class="offers-item__price-item">
+                                                                        <span>Межгород:</span>
+                                                                        <span>20 руб/км</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 col-md-auto">
+                                                                <div class="offers-item__tel">
+                                                                    <a href="#" @click="phoneToggle" class="btn btn_outline">
+                                                                        <span>Показать телефон</span>
+                                                                    </a>
+                                                                    <!-- <a v-bind:href="tel | phoneLink(tel)" v-else class="btn btn_outline">
+                                                                        <span>
+                                                                            <svg class="icon icon-tel icon_before">
+                                                                                <use xlink:href="images/sprite.svg#tel"></use>
+                                                                            </svg>
+                                                                            {{ tel }}
+                                                                        </span>
+                                                                    </a> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                
+                                                    <div class="offers-item__parameters">
+                                                        <ul class="unstyled">
+                                                            <li><strong>Вес:</strong> 3т</li>
+                                                            <li><strong>Длинна:</strong> 5м</li>
+                                                            <li><strong>Ширина:</strong> 2м</li>
+                                                            <li><strong>Высота:</strong> 2м</li>
+                                                        </ul>
+                                                    </div>
+                                
+                                                    <div class="offers-item__tags">
+                                                        <ul class="unstyled">
+                                                            <li><a href="#">Вывоз мусора</a></li>
+                                                            <li><a href="#">Переезды</a></li>
+                                                            <li><a href="#">Межгород</a></li>
+                                                            <li><a href="#">Перевозка мебели</a></li>
+                                                            <li><a href="#">Перевозка пианино</a></li>
+                                                            <li><a href="#">Перевозка холодильника</a></li>
+                                                            <li><a href="#">Перевозка продуктов</a></li>
+                                                        </ul>
+                                                    </div>
+                                
+                                                    <div class="offers-item__text">
+                                                        <div class="offers-item__text-component">
+                                                            <a href="#" class="offers-item__more">
+                                                                Подробнее
+                                                                <svg class="icon icon-angle-down">
+                                                                    <use xlink:href="images/sprite.svg#angle-down"></use>
+                                                                </svg>
+                                                            </a>
+                                                            <div class="offers-item__description-wrap">
+                                                                <div>
+                                                                    <div class="offers-item__description">Грузоперевозки, межгород, переезд в другой город, квартирно-офиснные переезды, доставка, вывоз мусора, грузчики, быстрая подача.</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                
+                                        <!-- <div class="card__footer">
+                                            <div class="card__route">
+                                                <span>Новосибирск 20.10.2020</span>
+                                                <svg class="icon icon-arrow-right">
+                                                    <use xlink:href="images/sprite.svg#arrow-right"></use>
+                                                </svg>
+                                                <span>Томск</span>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
                             <div class="offers-list-pagination"></div>
                         </div>
                     </section>
@@ -322,6 +474,5 @@
 
     <link rel="stylesheet" href="css/style.css">
     <script src="js/scripts.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.1.0/dist/vue-multiselect.min.css">
 </body>
 </html>

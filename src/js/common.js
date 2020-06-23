@@ -2,38 +2,36 @@
  * Custom scripts
  */
 (function() {
-    //===== Input mask telephone =====//
-    //const inputTel = document.querySelector('.input-tel');
-
-    // if ( inputTel ) {
-    //     Inputmask({'mask': '+7 (999) 999-9999'}).mask(inputTel);
-    // }
-
-    //===== Dropdawn select =====//
-    // const inputSelectEl = document.querySelector('.input-select');
-
-    // new Choices(inputSelectEl, {
-    //             searchEnabled: false,
-    //             itemSelectText: '',
-    //             shouldSort: false
-    //         });
-
-    // if ( inputSelectEl.length ) {
-    //     for ( let el of inputSelectEl ) {
-    //         new Choices(el, {
-    //             searchEnabled: false,
-    //             itemSelectText: '',
-    //             shouldSort: false
-    //         });
-    //     }
-    // }
-
-    //===== Site Vue =====//
+    //===== Vue =====//
     Vue.config.devtools = true;
 
     const APP_LOG_LIFECYCLE_EVENTS = false;
 
-    let dataSite = {
+    //===== Components (Start) =====//
+    //_____ Select _____//
+    Vue.component('vue-multiselect', VueMultiselect.Multiselect);
+
+    //_____ Slide toggle _____//
+    Vue.component('slide-up-down', VueSlideUpDown);
+
+    //_____ Offer card _____//
+    //===== Components (End) =====//
+
+    //===== Filters =====//
+    Vue.filter('phoneCrop', function(value) {
+        if (!value) return ''
+        value = value.toString();
+        return value.replace(/[^0-9\+]+/g, '')
+    });
+
+    Vue.filter('phoneLink', function(value) {
+        if (!value) return ''
+        value = value.toString();
+        return 'tel:' + value.replace(/[^0-9\+]+/g, '')
+    });
+
+     //===== Site data =====//
+     let dataSite = {
         phoneDevice: ( window.innerWidth < 768 ) ? true : false,
         tabletDevice: ( window.innerWidth < 1024  ) ? true : false,
         mobileMenu: false,
@@ -47,11 +45,9 @@
         }
     }
 
+    //===== Example Vue Site =====//
     let site = new Vue({
         el: '#site',
-        components: {
-            Multiselect: window.VueMultiselect.default
-        },
         data: dataSite,
         methods: {
             watchSiteSize: function() {
@@ -67,6 +63,13 @@
             toggleMobileMenu: function(e) {
                 e.preventDefault();
                 this.mobileMenu = this.mobileMenu ? false : true;
+            },
+            phoneToggle: function(e) {
+                e.preventDefault();
+                console.dir(e.target);
+                e.target.innerText = '+7 (913) 060-88-33';
+
+                return '+7 (913) 060-88-33';
             }
         },
         beforeCreate: function() {

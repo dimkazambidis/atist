@@ -9,6 +9,7 @@ const srcFolder  = 'src',
 const path = {
     src: {
         html: srcFolder + '/*.html',
+        vue: srcFolder + '/components/*.html',
         inc: srcFolder + '/**/*.html',
         sass: srcFolder + '/sass/**/*.sass',
         js: srcFolder + '/js/**/*.js',
@@ -18,6 +19,7 @@ const path = {
     },
     dist: {
         html: distFolder + '/*.html',
+        vue: distFolder + '/components',
         css: distFolder + '/css',
         js: distFolder + '/js',
         img: distFolder + '/images',
@@ -87,6 +89,7 @@ function jsLibFunc() {
         // srcFolder + '/libs/inputmask/dist/inputmask.min.js',
         //srcFolder + '/libs/choices/public/assets/scripts/choices.min.js',
         srcFolder + '/libs/vue-multiselect/dist/vue-multiselect.min.js',
+        srcFolder + '/libs/vue-slide-up-down/dist/vue-slide-up-down.umd.js',
         distFolder + '/js/scripts.js'
     ])
     .pipe(concat('scripts.js'))
@@ -139,6 +142,23 @@ function htmlFunc() {
     .pipe(gulp.dest(distFolder + '/'))
     .pipe(browserSync.stream());
 }
+
+/***************************
+  Vue
+***************************/
+// function vueFunc() {
+//     return gulp.src(path.src.vue)
+//     .pipe(include({
+//         prefix: '@',
+//         basepath: '@file'
+//     }))
+//     .pipe(embedSvg({
+//         root: './src',
+//         selectors: 'svg[src*=".svg"]'
+//     }))
+//     .pipe(gulp.dest(path.dist.vue))
+//     .pipe(browserSync.stream());
+// }
 
 /***************************
   Image
@@ -226,7 +246,7 @@ function fontsFunc() {
   Watch
 ***************************/
 function watchFunc() {
-    gulp.watch(path.src.inc, gulp.parallel( htmlFunc ));
+    gulp.watch(path.src.html, gulp.parallel( htmlFunc ));
     gulp.watch(path.src.sass, gulp.parallel( sassFunc ));
     gulp.watch(path.src.js, gulp.parallel( jsFunc ));
     gulp.watch(path.src.img, gulp.parallel( imgFunc ));

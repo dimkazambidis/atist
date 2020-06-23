@@ -44,8 +44,10 @@
         width: 100%
 
 .card
-    padding: 20px 15px
     background-color: #fff
+
+.card-wrapper
+    padding: 15px
 
 .breadcrumbs
     margin-bottom: 10px
@@ -54,11 +56,13 @@
             display: inline-block
             color: $color-text-light
             +fz(12)
+            color: $color-accent
             &::after
                 content: "/"
                 display: inline-block
                 margin-left: 4px
                 margin-right: 4px
+                color: $color-text-light
             &:last-child
                 &::after
                     content: none
@@ -66,7 +70,7 @@
                 color: $color-text-light
                 &:hover
                     text-decoration: none
-                    color: $color-text
+                    color: $color-accent
 
 .page-header-text
     padding-top: 10px
@@ -74,3 +78,129 @@
 .offers-filter
     .multiselect
         width: 200px
+
+.offers-item
+    margin-bottom: 20px
+    h3
+        +fz(16)
+    &:last-child
+        margin-bottom: 0
+
+.offers-item__img
+    width: 120px
+    +element-geometry(120)
+    overflow: hidden
+    border: 2px solid $color-border
+    img
+        width: 100%
+        height: auto
+
+.offers-item__rating
+    color: $color-accent
+    +fz(24)
+    font-weight: 700
+    position: relative
+    top: -4px
+    .icon
+        +fz(26)
+        line-height: 1
+        position: relative
+        top: -3px
+
+.offers-item__date
+    color: $color-text-light
+    padding-bottom: 4px
+    .icon
+        color: $color-success
+        +fz(12)
+        position: relative
+        top: -1px
+
+.offers-item__location
+    padding-top: 8px
+    .icon
+        position: relative
+        top: -2px
+
+.offers-item__action
+    padding-top: 12px
+
+.offers-item__price
+    +element-geometry(40)
+    height: 100%
+    background-color: $color-bg-light
+    padding: 8px 15px
+    color: $color-accent
+    font-weight: 500
+
+.offers-item__price-item
+    display: inline-block
+    margin-right: 20px
+    &:last-child
+        margin-right: 0
+    &:first-child
+        font-weight: 700
+        +fz(16)
+            
+
+.offers-item__parameters,
+.offers-item__tags
+    padding: 8px 0
+    border-top: 1px solid $color-border
+    border-bottom: 1px solid $color-border
+    ul
+        li
+            display: inline-block
+            //+fz(12)
+            &:last-child
+                margin-right: 0
+
+.offers-item__parameters
+    margin-top: 15px
+    ul
+        li
+            margin-right: 20px
+
+.offers-item__tags
+    border-top: none
+    ul
+        li
+            &::after
+                content: "/"
+                display: inline-block
+                margin-left: 8px
+                margin-right: 8px
+            &:last-child
+                &::after
+                    content: none
+            a
+                color: $color-text
+                &:hover,
+                &.active
+                    text-decoration: none
+                    color: $color-accent
+
+.offers-item__text
+    padding-top: 10px
+
+.offers-item__more
+    display: inline-block
+    .icon
+        transition: transform .2s
+    &.active
+        .icon
+            transform: rotate(180deg)
+
+.offers-item__description-wrap
+    overflow: hidden
+    >div
+        padding-top: 12px
+
+.offers-item__description
+    padding: 10px 15px
+    background-color: $color-bg-light
+
+.card__footer
+    padding: 10px 15px
+    background-color: $color-base-light
+    font-weight: 500

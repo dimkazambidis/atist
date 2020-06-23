@@ -14,6 +14,11 @@
     .hidden-lg
         display: none
 
+    .offers-item__price
+        span
+            margin-right: 0
+            display: block
+
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : map-get($grid-breakpoints, lg) - 1px)
@@ -72,6 +77,29 @@
         max-width: 100%
         button
             +element-geometry(40)
+            width: 100%
+
+    .offers-item
+        .card
+            margin-left: -15px
+            margin-right: -15px
+
+    .offers-item__img
+        width: 54px
+        height: 54px
+        margin-bottom: 20px
+
+    .offers-item__price
+        height: auto
+        // padding: 0
+        // background-color: transparent
+        span
+            display: block
+            margin-right: 0
+
+    .offers-item__tel
+        padding-top: 12px
+        .btn
             width: 100%
 
     .site-footer-top-bar
