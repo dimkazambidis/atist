@@ -1,0 +1,43 @@
+/*==============  Search  ==============*/
+.site-search
+    background-color: $color-base-dark
+
+.site-search__wrap
+    display: -webkit-box
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
+    -webkit-flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    padding-top: 15px
+    padding-bottom: 15px
+
+.site-search__input,
+.site-search__btn
+    -webkit-flex-basis: 0
+    -ms-flex-preferred-size: 0
+    flex-basis: 0
+    -webkit-box-flex: 1
+    -webkit-flex-grow: 1
+    -ms-flex-positive: 1
+    flex-grow: 1
+    min-width: 0
+    max-width: 100%
+    text-align: center
+
+.site-search__input
+    input[type="text"]
+        border-top-right-radius: 0
+        border-bottom-right-radius: 0
+
+.site-search__btn
+    -webkit-box-flex: 0
+    -webkit-flex: 0 0 260px
+    -ms-flex: 0 0 260px
+    flex: 0 0 260px
+    max-width: 260px
+    button
+        border-top-left-radius: 0
+        border-bottom-left-radius: 0
+        width: 100%

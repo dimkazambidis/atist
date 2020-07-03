@@ -1,4 +1,4 @@
-@include('parts/header.html')
+@include('parts/header_mobile.html')
 
         <div class="site-primary">
             <div class="site-search">
@@ -45,41 +45,6 @@
                     </section>
 
                     <section class="offers">
-                        <!-- <div class="offers-filter">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="input-container">
-                                        <vue-multiselect
-                                            v-model="inputs.filter.value"
-                                            label="key"
-                                            placeholder="Быстрый фильтр"
-                                            :options="[
-                                                { value: '#', key: 'По городу' },
-                                                { value: '#', key: 'Межгород' },
-                                                { value: '#', key: 'По России' }
-                                            ]">
-                                        </vue-multiselect>
-                                    </div>
-                                </div>
-
-                                <div class="col-auto">
-                                    <div class="input-container">
-                                        <vue-multiselect
-                                            v-model="inputs.sort.value"
-                                            label="key"
-                                            placeholder="Сортировать"
-                                            :options="[
-                                                { value: '#', key: 'Сначала дешевле' },
-                                                { value: '#', key: 'Сначала дороже' },
-                                                { value: '#', key: 'По рейтингу' },
-                                                { value: '#', key: 'По стажу' },
-                                                { value: '#', key: 'По отзывам' }
-                                            ]">
-                                        </vue-multiselect>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="offers-list">
                             <div class="offers-list-wrap">
                                 @include('parts/offer_gold.html')
@@ -112,8 +77,6 @@
                         </div>
                     </section>
                 </main>
-
-                @include('parts/aside.html')
             </div>
         </div>
 

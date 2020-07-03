@@ -9,7 +9,7 @@
     <meta name="description" content="Description">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=1024, initial-scale=1, maximum-scale=1">
 
     <meta property="og:image" content="path/to/image.jpg">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
@@ -29,110 +29,62 @@
 </head>
 
 <body>
-    <div id="site" class="site" v-bind:class="{ 'menu-on': mobileMenu }">
+    <div id="site" class="site">
         <div class="site-wrapper">
-            <div class="site-mobile-menu">
-                111
-            </div>
-
             <header id="header" class="site-header">
-                <template v-if="!phoneDevice">
-                    <div class="site-header-main-bar">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col col-md-auto site-header__logo site-header__item-center">
+                <div class="site-header-main-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-md-auto site-header__logo site-header__item-center">
+                                <div>
                                     <div>
-                                        <div>
-                                            <figure>
-                                                <img src="images/logo.svg" title="Атист.ру"></img>
-                                            </figure>
-                                        </div>
+                                        <figure>
+                                            <img src="images/logo.svg" title="Атист.ру"></img>
+                                        </figure>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col-auto site-header__city site-header__item-center">
+                            <div class="col-auto site-header__city site-header__item-center">
+                                <div>
                                     <div>
-                                        <div>
-                                            <a href="#" title="Новосибирск">
-                                                Новосибирск
-                                                <svg class="icon icon-angle-down icon_before">
-                                                    <use xlink:href="images/sprite.svg#angle-down"></use>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                        <a href="#" title="Новосибирск">
+                                            Новосибирск
+                                            <svg class="icon icon-angle-down icon_before">
+                                                <use xlink:href="images/sprite.svg#angle-down"></use>
+                                            </svg>
+                                        </a>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col site-header__btn site-header__item-center">
+                            <div class="col site-header__btn site-header__item-center">
+                                <div>
                                     <div>
-                                        <div>
-                                            <a href="#" class="btn btn_primary btn_small" title="Подать объявление">
-                                                <svg class="icon icon-add icon_before">
-                                                    <use xlink:href="images/sprite.svg#add"></use>
-                                                </svg>
-                                                Подать объявление
-                                            </a>
-                                        </div>
+                                        <a href="#" class="btn btn_primary btn_small" title="Подать объявление">
+                                            <svg class="icon icon-add icon_before">
+                                                <use xlink:href="images/sprite.svg#add"></use>
+                                            </svg>
+                                            Подать объявление
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="site-header-nav-bar">
-                        <div class="container">
-                            <nav class="site-header-nav">
-                                <ul class="unstyled">
-                                    <li><a href="#" title="По городу">По городу</a></li>
-                                    <li><a href="#" title="По области">По области</a></li>
-                                    <li><a href="#" title="По России">По России</a></li>
-                                </ul>
-                            </nav>
-                        </div>
+                <div class="site-header-nav-bar">
+                    <div class="container">
+                        <nav class="site-header-nav">
+                            <ul class="unstyled">
+                                <li><a href="#" title="По городу">По городу</a></li>
+                                <li><a href="#" title="По области">По области</a></li>
+                                <li><a href="#" title="По России">По России</a></li>
+                            </ul>
+                        </nav>
                     </div>
-                </template>
-
-                <template v-else>
-                    <div class="site-header-main-bar">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-auto site-header__item-center">
-                                    <div>
-                                        <div>
-                                            <a href="#" class="site-header-burger" @click="toggleMobileMenu">
-                                                <svg class="icon icon-burger">
-                                                    <use xlink:href="images/sprite.svg#burger"></use>
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                                <div class="col col-md-auto site-header__logo site-header__item-center">
-                                    <div>
-                                        <div>
-                                            <figure>
-                                                <img src="images/logo.svg" title="Атист.ру"></img>
-                                            </figure>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                                <div class="col-auto site-header__item-center">
-                                    <div>
-                                        <div>
-                                            <a href="#" class="site-header-burger">
-                                                <svg class="icon icon-filter">
-                                                    <use xlink:href="images/sprite.svg#filter"></use>
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </template>
+                </div>
             </header>
 
         <div class="site-primary">
@@ -279,22 +231,6 @@
                             <div class="site-footer__item col-md-auto">
                                 <div>
                                     <div>
-                                        <ul class="site-footer-pay unstyled">
-                                            <li>
-                                                <span><img src="images/visa.svg" title="Visa"></img></span> Visa
-                                            </li>
-
-                                            <li>
-                                                <span><img src="images/mastercard.svg" title="MasterCard"></img></span> MasterCard
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="site-footer__item col-md-auto" v-if="!tabletDevice">
-                                <div>
-                                    <div>
                                         <a href="#" class="btn btn_outline btn_invert btn_inline" title="Написать нам">Написать нам</a>
                                     </div>
                                 </div>
@@ -310,11 +246,11 @@
                                     <div>атист.ру | грузоперевозоки по России</div>
                                 </div>
                             </div>
-                            <div class="site-footer__item col-md-auto">
+                            <!-- <div class="site-footer__item col-md-auto">
                                 <div>
                                     <div><a href="#" title="Политика озврата денежных средств">Возврат денежных средств</a></div>
                                 </div>
-                             </div>
+                             </div> -->
                         </div>
                     </div>
                 </div>

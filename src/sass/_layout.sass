@@ -1,47 +1,5 @@
 /*==============  Layout  ==============*/
-
-.site-search
-    background-color: $color-base-dark
-
-.site-search__wrap
-    display: -webkit-box
-    display: -webkit-flex
-    display: -ms-flexbox
-    display: flex
-    -webkit-flex-wrap: wrap
-    -ms-flex-wrap: wrap
-    flex-wrap: wrap
-    padding-top: 15px
-    padding-bottom: 15px
-
-.site-search__input,
-.site-search__btn
-    -webkit-flex-basis: 0
-    -ms-flex-preferred-size: 0
-    flex-basis: 0
-    -webkit-box-flex: 1
-    -webkit-flex-grow: 1
-    -ms-flex-positive: 1
-    flex-grow: 1
-    min-width: 0
-    max-width: 100%
-    text-align: center
-
-.site-search__input
-    input[type="text"]
-        border-top-right-radius: 0
-        border-bottom-right-radius: 0
-
-.site-search__btn
-    -webkit-box-flex: 0
-    -webkit-flex: 0 0 260px
-    -ms-flex: 0 0 260px
-    flex: 0 0 260px
-    max-width: 260px
-    button
-        border-top-left-radius: 0
-        border-bottom-left-radius: 0
-        width: 100%
+@import "search"
 
 .card
     background-color: #fff
@@ -74,6 +32,10 @@
 
 .page-header-text
     padding-top: 10px
+    padding-bottom: 15px
+    p
+        &:last-child
+            margin-bottom: 0
 
 .offers-filter
     .multiselect
@@ -85,6 +47,16 @@
         +fz(16)
     &:last-child
         margin-bottom: 0
+    &.offers-item_gold
+        .card
+            background-color: #fff9e6//#fff7dd//#FFD13E//#fff9e6
+        .offers-item__price
+            background-color: #fbeec5//#ece7d5//
+    &.offers-item_accent
+        .card
+            background-color: #E5ECF2
+        .offers-item__price
+            background-color: #fff
 
 .offers-item__img
     width: 120px
@@ -94,6 +66,15 @@
     img
         width: 100%
         height: auto
+
+.offers-item__num
+    display: inline-block
+    +fz(12)
+    +element-geometry(22)
+    padding: 2px 12px
+    background-color: $color-bg-light
+    text-align: center
+    //font-weight: 500
 
 .offers-item__rating
     color: $color-accent
@@ -107,14 +88,31 @@
         position: relative
         top: -3px
 
+.offers-item__online-badge
+    position: relative
+    top: 3px
+    background-color: $color-success
+    color: #fff
+    padding: 2px 12px
+    +fz(12)
+    +element-geometry(22)
+    .icon
+        +fz(16)
+        line-height: 1
+        position: relative
+        top: -1px
+
 .offers-item__date
     color: $color-text-light
     padding-bottom: 4px
+    +fz(12)
+    position: relative
+    top: -2px
     .icon
         color: $color-success
-        +fz(12)
+        +fz(10)
         position: relative
-        top: -1px
+        top: -2px
 
 .offers-item__location
     padding-top: 8px
@@ -140,8 +138,7 @@
         margin-right: 0
     &:first-child
         font-weight: 700
-        +fz(16)
-            
+        +fz(16)    
 
 .offers-item__parameters,
 .offers-item__tags
@@ -151,56 +148,80 @@
     ul
         li
             display: inline-block
-            //+fz(12)
+            // +fz(12)
+            strong
+                font-weight: 500
             &:last-child
                 margin-right: 0
 
 .offers-item__parameters
-    margin-top: 15px
     ul
         li
-            margin-right: 20px
+            margin-right: 15px
+            strong
+                display: inline-block
+                margin-right: 4px
+            .icon
+                +fz(16)
+                position: relative
+                top: -3px
+                display: inline-block
+                //margin-right: 4px
 
 .offers-item__tags
-    border-top: none
+    border: none
     ul
         li
+            // +fz(12)
             &::after
                 content: "/"
                 display: inline-block
                 margin-left: 8px
-                margin-right: 8px
+                margin-right: 4px
             &:last-child
                 &::after
                     content: none
             a
                 color: $color-text
                 &:hover,
-                &.active
+                    text-decoration: none
+                    color: $color-accent
+            &.active
+                a
                     text-decoration: none
                     color: $color-accent
 
-.offers-item__text
-    padding-top: 10px
-
-.offers-item__more
-    display: inline-block
-    .icon
-        transition: transform .2s
-    &.active
-        .icon
-            transform: rotate(180deg)
-
 .offers-item__description-wrap
     overflow: hidden
-    >div
-        padding-top: 12px
 
 .offers-item__description
-    padding: 10px 15px
-    background-color: $color-bg-light
+    padding: 12px 0 10px 0
 
 .card__footer
     padding: 10px 15px
     background-color: $color-base-light
     font-weight: 500
+
+.offers-list-pagination
+    padding-top: 20px
+
+.pagination
+    +fz(20)
+    line-height: 30px
+    text-align: center
+    a
+        display: inline-block
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        text-align: center
+        color: $color-text
+        text-decoration: none
+        .icon
+            position: relative
+            top: -2px
+        &:hover
+            color: $color-base
+        &.active
+            background-color: $color-base
+            color: #fff

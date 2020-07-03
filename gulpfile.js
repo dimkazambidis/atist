@@ -9,7 +9,6 @@ const srcFolder  = 'src',
 const path = {
     src: {
         html: srcFolder + '/*.html',
-        vue: srcFolder + '/components/*.html',
         inc: srcFolder + '/**/*.html',
         sass: srcFolder + '/sass/**/*.sass',
         js: srcFolder + '/js/**/*.js',
@@ -246,7 +245,7 @@ function fontsFunc() {
   Watch
 ***************************/
 function watchFunc() {
-    gulp.watch(path.src.html, gulp.parallel( htmlFunc ));
+    gulp.watch(path.src.inc, gulp.parallel( htmlFunc ));
     gulp.watch(path.src.sass, gulp.parallel( sassFunc ));
     gulp.watch(path.src.js, gulp.parallel( jsFunc ));
     gulp.watch(path.src.img, gulp.parallel( imgFunc ));

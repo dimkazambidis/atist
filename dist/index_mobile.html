@@ -9,7 +9,7 @@
     <meta name="description" content="Description">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=1024, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <meta property="og:image" content="path/to/image.jpg">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
@@ -31,11 +31,27 @@
 <body>
     <div id="site" class="site">
         <div class="site-wrapper">
+            <div class="site-mobile-menu">
+                111
+            </div>
+
             <header id="header" class="site-header">
-                <div class="site-header-main-bar">
+                <div class="site-header-main-bar site-header-main-bar_m">
                     <div class="container">
                         <div class="row">
-                            <div class="col col-md-auto site-header__logo site-header__item-center">
+                            <div class="col-auto site-header__item-center">
+                                <div>
+                                    <div>
+                                        <a href="#" class="site-header-burger">
+                                            <svg class="icon icon-burger">
+                                                <use xlink:href="images/sprite.svg#burger"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col site-header__logo site-header__logo_m site-header__item-center">
                                 <div>
                                     <div>
                                         <figure>
@@ -44,45 +60,19 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-auto site-header__city site-header__item-center">
+    
+                            <div class="col-auto site-header__item-center">
                                 <div>
                                     <div>
-                                        <a href="#" title="Новосибирск">
-                                            Новосибирск
-                                            <svg class="icon icon-angle-down icon_before">
-                                                <use xlink:href="images/sprite.svg#angle-down"></use>
+                                        <a href="#" class="site-header-burger">
+                                            <svg class="icon icon-filter">
+                                                <use xlink:href="images/sprite.svg#filter"></use>
                                             </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col site-header__btn site-header__item-center">
-                                <div>
-                                    <div>
-                                        <a href="#" class="btn btn_primary btn_small" title="Подать объявление">
-                                            <svg class="icon icon-add icon_before">
-                                                <use xlink:href="images/sprite.svg#add"></use>
-                                            </svg>
-                                            Подать объявление
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="site-header-nav-bar">
-                    <div class="container">
-                        <nav class="site-header-nav">
-                            <ul class="unstyled">
-                                <li><a href="#" title="По городу">По городу</a></li>
-                                <li><a href="#" title="По области">По области</a></li>
-                                <li><a href="#" title="По России">По России</a></li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </header>
@@ -132,41 +122,6 @@
                     </section>
 
                     <section class="offers">
-                        <!-- <div class="offers-filter">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="input-container">
-                                        <vue-multiselect
-                                            v-model="inputs.filter.value"
-                                            label="key"
-                                            placeholder="Быстрый фильтр"
-                                            :options="[
-                                                { value: '#', key: 'По городу' },
-                                                { value: '#', key: 'Межгород' },
-                                                { value: '#', key: 'По России' }
-                                            ]">
-                                        </vue-multiselect>
-                                    </div>
-                                </div>
-
-                                <div class="col-auto">
-                                    <div class="input-container">
-                                        <vue-multiselect
-                                            v-model="inputs.sort.value"
-                                            label="key"
-                                            placeholder="Сортировать"
-                                            :options="[
-                                                { value: '#', key: 'Сначала дешевле' },
-                                                { value: '#', key: 'Сначала дороже' },
-                                                { value: '#', key: 'По рейтингу' },
-                                                { value: '#', key: 'По стажу' },
-                                                { value: '#', key: 'По отзывам' }
-                                            ]">
-                                        </vue-multiselect>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="offers-list">
                             <div class="offers-list-wrap">
                                 <div class="offers-item offers-item_gold">
@@ -835,34 +790,6 @@
                         </div>
                     </section>
                 </main>
-
-                <aside class="site-aside" v-if="!phoneDevice">
-    <div class="site-aside-wrap">
-        <div class="aside-section site-aside-categories">
-            <h4>Категории</h4>
-            <ul class="unstyled">
-                <li><a href="#" title="Вывоз мусора">Вывоз мусора <span>15</span></a></li>
-                <li><a href="#" title="Квартирный переезд">Квартирный переезд <span>24</span></a></li>
-                <li><a href="#" title="Перевозка мебели">Перевозка мебели <span>53</span></a></li>
-                <li><a href="#" title="Офисный переезд">Офисный переезд <span>17</span></a></li>
-                <li><a href="#" title="Дачные переезды">Дачные переезды <span>64</span></a></li>
-                <li><a href="#" title="Перевозка вещей">Перевозка вещей <span>11</span></a></li>
-                <li><a href="#" title="Переезды с грузчиками">Переезды с грузчиками <span>97</span></a></li>
-                <li><a href="#" title="Перевозка дивана">Перевозка дивана <span>23</span></a></li>
-                <li><a href="#" title="Перевозка холодильника">Перевозка холодильника <span>778</span></a></li>
-                <li><a href="#" title="Перевозка пианино">Перевозка пианино <span>12</span></a></li>
-                <li><a href="#" title="Рефрижераторы">Рефрижераторы <span>5</span></a></li>
-                <li><a href="#" title="Негабаритные перевозки">Негабаритные перевозки <span>11</span></a></li>
-                <li><a href="#" title="Грузоперевозка по России">Грузоперевозка по России <span>58</span></a></li>
-            </ul>
-        </div>
-
-        <div class="aside-section site-aside-categories">
-            <h4>Фильтр</h4>
-            Тут будет фильтр!
-        </div>
-    </div>
-</aside>
             </div>
         </div>
 
