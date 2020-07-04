@@ -30,9 +30,11 @@
                     text-decoration: none
                     color: $color-accent
 
+.page-header
+    padding-bottom: 15px
+
 .page-header-text
     padding-top: 10px
-    padding-bottom: 15px
     p
         &:last-child
             margin-bottom: 0
@@ -225,3 +227,60 @@
         &.active
             background-color: $color-base
             color: #fff
+
+.categories-list-col
+    position: relative
+    &::before
+        content: ""
+        display: block
+        position: absolute
+        top: 0
+        right: 10px
+        bottom: 0
+        width: 1px
+        background-color: $color-bg
+    &:last-child
+        &::before
+            content: none
+
+.categories-list
+    padding-top: 10px
+
+.categories-list-section
+    margin-top: 30px
+    position: relative
+    ul
+        li
+            margin-bottom: 4px
+            a
+                color: $color-text
+                &:hover
+                    color: $color-base
+                    text-decoration: none
+            &.current
+                a
+                    color: $color-base
+                    font-weight: 500
+            &:last-child
+                margin-bottom: 0
+    &.categories-list-section_with-letter
+        padding-left: 50px
+    &.current
+        .categories-list__letter
+            background-color: $color-base
+            color: #fff
+    &:first-child
+        margin-top: 6px
+
+.categories-list__letter
+    position: absolute
+    top: -6px
+    left: 0
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    background-color: $color-bg
+    text-align: center
+    +fz(18)
+    font-weight: 500
+    line-height: 30px

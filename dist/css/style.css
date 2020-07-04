@@ -6453,9 +6453,12 @@ button.btn:focus {
   color: #fd6f57;
 }
 
+.page-header {
+  padding-bottom: 15px;
+}
+
 .page-header-text {
   padding-top: 10px;
-  padding-bottom: 15px;
 }
 
 .page-header-text p:last-child {
@@ -6720,6 +6723,84 @@ button.btn:focus {
 .pagination a.active {
   background-color: #4784b3;
   color: #fff;
+}
+
+.categories-list-col {
+  position: relative;
+}
+
+.categories-list-col::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  width: 1px;
+  background-color: #e2eaed;
+}
+
+.categories-list-col:last-child::before {
+  content: none;
+}
+
+.categories-list {
+  padding-top: 10px;
+}
+
+.categories-list-section {
+  margin-top: 30px;
+  position: relative;
+}
+
+.categories-list-section ul li {
+  margin-bottom: 4px;
+}
+
+.categories-list-section ul li a {
+  color: #3a4b5b;
+}
+
+.categories-list-section ul li a:hover {
+  color: #4784b3;
+  text-decoration: none;
+}
+
+.categories-list-section ul li.current a {
+  color: #4784b3;
+  font-weight: 500;
+}
+
+.categories-list-section ul li:last-child {
+  margin-bottom: 0;
+}
+
+.categories-list-section.categories-list-section_with-letter {
+  padding-left: 50px;
+}
+
+.categories-list-section.current .categories-list__letter {
+  background-color: #4784b3;
+  color: #fff;
+}
+
+.categories-list-section:first-child {
+  margin-top: 6px;
+}
+
+.categories-list__letter {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background-color: #e2eaed;
+  text-align: center;
+  font-size: 1.28571rem;
+  font-weight: 500;
+  line-height: 30px;
 }
 
 /*=============  Footer  =============*/

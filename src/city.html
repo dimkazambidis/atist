@@ -1,0 +1,152 @@
+@include('parts/header/header.html')
+
+        <div class="site-primary">
+            <div class="site-search">
+                <div class="container">
+                    <div class="site-search__wrap">
+                        <div class="site-search__input">
+                            <input type="text" class="npt">
+                        </div>
+                        <div class="site-search__btn">
+                            <button class="btn">
+                                <svg class="icon icon-search icon_before">
+                                    <use xlink:href="images/sprite.svg#search"></use>
+                                </svg>
+                                Найти
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container site-content">
+                <main class="site-main">
+                    <section class="breadcrumbs">
+                        <ul class="unstyled" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+                            <li itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+                                <a href="index.html" itemprop="item" title="Грузоперевозки Новосибирск">
+                                    <span itemprop="name">Грузоперевозки Новосибирск</span>
+                                </a>
+                                <meta itemprop="position" content="1">
+                            </li>
+
+                            <li itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+                                <span data-ftid="header_breadcrumb-item">Выбор города</span>
+                                <meta itemprop="position" content="2">
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <section class="page-header">
+                        <h1>Выбор города</h1>
+                        <!-- <div class="page-header-text">
+                            <p>Сайт <strong>АТИСТ.РУ</strong> – проверенные объявления по грузовым перевозкам, без посредников! Исполнители размещают объявления, где указывают перечень услуг и дополнительные особенности своей работы.</p>
+                        </div> -->
+                    </section>
+
+                    <div class="categories">
+                        <div class="categories-list row">
+                            <div class="categories-list-col col-4">
+                                <div class="categories-list-section categories-list-section_with-letter current">
+                                    <div class="categories-list__letter">А</div>
+                                    <ul class="unstyled">
+                                        <li><a href="#">Абзаково</a></li>
+                                        <li><a href="#">Адлер</a></li>
+                                        <li class="current"><a href="#">Алушта</a></li>
+                                        <li><a href="#">Анапа</a></li>
+                                        <li><a href="#">Архыз</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="categories-list-section categories-list-section_with-letter">
+                                    <div class="categories-list__letter">Б</div>
+                                    <ul class="unstyled">
+                                        <li><a href="#">Белокуриха</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="categories-list-section categories-list-section_with-letter">
+                                    <div class="categories-list__letter">В</div>
+                                    <ul class="unstyled">
+                                        <li><a href="#">Великий Новгород</a></li>
+                                        <li><a href="#">Великий Устюг</a></li>
+                                        <li><a href="#">Владивосток</a></li>
+                                        <li><a href="#">Волгоград</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="categories-list-section categories-list-section_with-letter">
+                                    <div class="categories-list__letter">Г</div>
+                                    <ul class="unstyled">
+                                        <li><a href="#">Геленджик</a></li>
+                                        <li><a href="#">Горячие ключи</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="categories-list-col col-4">
+                                <div class="categories-list-section categories-list-section_with-letter">
+                                    <div class="categories-list__letter">Д</div>
+                                    <ul class="unstyled">
+                                        <li><a href="#">Домбай</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="categories-list-section categories-list-section_with-letter">
+                                    <div class="categories-list__letter">Е</div>
+                                    <ul class="unstyled">
+                                        <li><a href="#">Евпатория</a></li>
+                                        <li><a href="#">Ейск</a></li>
+                                        <li><a href="#">Екатеринбург</a></li>
+                                        <li><a href="#">Ессентуки</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="categories-list-section categories-list-section_with-letter">
+                                    <div class="categories-list__letter">И</div>
+                                    <ul class="unstyled">
+                                        <li><a href="#">Иркутск</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="categories-list-section categories-list-section_with-letter">
+                                    <div class="categories-list__letter">К</div>
+                                    <ul class="unstyled">
+                                        <li><a href="#">Кабардинка</a></li>
+                                        <li><a href="#">Казань</a></li>
+                                        <li><a href="#">Калининград</a></li>
+                                        <li><a href="#">Кировск</a></li>
+                                        <li><a href="#">Красная поляна</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="categories-list-col col-4">
+                                <div class="categories-list-section categories-list-section_with-letter">
+                                    <div class="categories-list__letter">М</div>
+                                    <ul class="unstyled">
+                                        <li><a href="#">Манжерок</a></li>
+                                        <li><a href="#">Москва</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="categories-list-section categories-list-section_with-letter">
+                                    <div class="categories-list__letter">С</div>
+                                    <ul class="unstyled">
+                                        <li><a href="#">Самара</a></li>
+                                        <li><a href="#">Санкт-Петербург</a></li>
+                                        <li><a href="#">Севастопль</a></li>
+                                        <li><a href="#">Симферопль</a></li>
+                                        <li><a href="#">Сочи</a></li>
+                                        <li><a href="#">Ставрополь</a></li>
+                                        <li><a href="#">Судак</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+@include('parts/footer/footer.html')
