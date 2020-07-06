@@ -2,6 +2,43 @@
  * Custom scripts
  */
 (function() {
+    //===== Dropdown lists =====//
+    const selectStandart = document.querySelectorAll('.select-standart');
+    const selectLink = document.querySelectorAll('.select-link');
+
+    if ( selectStandart.length ) {
+        for ( let el of selectStandart ) {
+            new Choices(el, {
+                searchEnabled: false,
+                //searchPlaceholderValue: 'Поиск...',
+                itemSelectText: '',
+                shouldSort: false,
+                classNames: {
+                    containerOuter: 'choices choices_placeholder-hidden'
+                }
+            });
+        }
+    }
+
+    if ( selectLink.length ) {
+        for ( let el of selectLink ) {
+            new Choices(el, {
+                searchEnabled: false,
+                //searchPlaceholderValue: 'Поиск...',
+                itemSelectText: '',
+                shouldSort: false,
+                classNames: {
+                    containerOuter: 'choices choices_placeholder-hidden'
+                }
+            });
+
+            el.addEventListener('change', function(e) {
+                //console.log(e.detail.value);
+                location.href = e.detail.value;
+            });
+        }
+    }
+
     //===== Vue =====//
     // Vue.config.devtools = true;
 

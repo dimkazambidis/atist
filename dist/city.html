@@ -39,7 +39,7 @@
                                 <div>
                                     <div>
                                         <figure>
-                                            <img src="images/logo.svg" title="Атист.ру"></img>
+                                            <img src="images/logo.svg" title="Атист.ру">
                                         </figure>
                                     </div>
                                 </div>
@@ -106,32 +106,34 @@
                 </div>
             </div>
 
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul class="unstyled" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+                        <li itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+                            <a href="index.html" itemprop="item" title="Грузоперевозки Новосибирск">
+                                <span itemprop="name">Грузоперевозки Новосибирск</span>
+                            </a>
+                            <meta itemprop="position" content="1">
+                        </li>
+
+                        <li itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+                            <span data-ftid="header_breadcrumb-item">Выбор города</span>
+                            <meta itemprop="position" content="2">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="container site-content">
                 <main class="site-main">
-                    <section class="breadcrumbs">
-                        <ul class="unstyled" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
-                            <li itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
-                                <a href="index.html" itemprop="item" title="Грузоперевозки Новосибирск">
-                                    <span itemprop="name">Грузоперевозки Новосибирск</span>
-                                </a>
-                                <meta itemprop="position" content="1">
-                            </li>
-
-                            <li itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
-                                <span data-ftid="header_breadcrumb-item">Выбор города</span>
-                                <meta itemprop="position" content="2">
-                            </li>
-                        </ul>
-                    </section>
-                    
                     <section class="page-header">
-                        <h1>Выбор города</h1>
+                        <h1 class="page-title">Выбор города</h1>
                         <!-- <div class="page-header-text">
                             <p>Сайт <strong>АТИСТ.РУ</strong> – проверенные объявления по грузовым перевозкам, без посредников! Исполнители размещают объявления, где указывают перечень услуг и дополнительные особенности своей работы.</p>
                         </div> -->
                     </section>
 
-                    <div class="categories">
+                    <section class="categories">
                         <div class="categories-list row">
                             <div class="categories-list-col col-4">
                                 <div class="categories-list-section categories-list-section_with-letter current">
@@ -231,7 +233,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </main>
             </div>
         </div>
@@ -285,6 +287,6 @@
     </div>
 
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts.js" defer></script>
 </body>
 </html>

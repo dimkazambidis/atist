@@ -85,10 +85,10 @@ function jsLibFunc() {
         srcFolder + '/libs/vue/dist/vue.min.js',
         srcFolder + '/libs/imagesloaded/imagesloaded.pkgd.min.js',
         srcFolder + '/libs/svgxuse/svgxuse.min.js',
-        // srcFolder + '/libs/inputmask/dist/inputmask.min.js',
-        //srcFolder + '/libs/choices/public/assets/scripts/choices.min.js',
-        srcFolder + '/libs/vue-multiselect/dist/vue-multiselect.min.js',
-        srcFolder + '/libs/vue-slide-up-down/dist/vue-slide-up-down.umd.js',
+        srcFolder + '/libs/inputmask/dist/inputmask.min.js',
+        srcFolder + '/libs/choices/public/assets/scripts/choices.min.js',
+        //srcFolder + '/libs/vue-multiselect/dist/vue-multiselect.min.js',
+        //srcFolder + '/libs/vue-slide-up-down/dist/vue-slide-up-down.umd.js',
         distFolder + '/js/scripts.js'
     ])
     .pipe(concat('scripts.js'))

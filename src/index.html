@@ -19,67 +19,67 @@
                 </div>
             </div>
 
-            <div class="container site-content">
-                <main class="site-main">
-                    <section class="breadcrumbs">
-                        <ul class="unstyled" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
-                            <li itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
-                                <a href="index.html" itemprop="item" title="Грузоперевозки Новосибирск">
-                                    <span itemprop="name">Грузоперевозки Новосибирск</span>
-                                </a>
-                                <meta itemprop="position" content="1">
-                            </li>
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul class="unstyled" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+                        <li itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+                            <a href="index.html" itemprop="item" title="Грузоперевозки Новосибирск">
+                                <span itemprop="name">Грузоперевозки Новосибирск</span>
+                            </a>
+                            <meta itemprop="position" content="1">
+                        </li>
 
-                            <li itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
-                                <span data-ftid="header_breadcrumb-item">Квартирный переезд</span>
-                                <meta itemprop="position" content="2">
-                            </li>
-                        </ul>
-                    </section>
-                    
+                        <li itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+                            <span data-ftid="header_breadcrumb-item">Квартирный переезд</span>
+                            <meta itemprop="position" content="2">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container site-content">
+                <main class="site-main">               
                     <section class="page-header">
-                        <h1>Грузовые перевозки в Новосибирске на газели и подобных авто</h1>
+                        <h1 class="page-title">Грузовые перевозки в Новосибирске на газели и подобных авто</h1>
                         <div class="page-header-text">
                             <p>Сайт <strong>АТИСТ.РУ</strong> – проверенные объявления по грузовым перевозкам, без посредников! Исполнители размещают объявления, где указывают перечень услуг и дополнительные особенности своей работы.</p>
                         </div>
                     </section>
 
                     <section class="offers">
-                        <!-- <div class="offers-filter">
+                        <div class="offers-filter">
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="input-container">
-                                        <vue-multiselect
-                                            v-model="inputs.filter.value"
-                                            label="key"
-                                            placeholder="Быстрый фильтр"
-                                            :options="[
-                                                { value: '#', key: 'По городу' },
-                                                { value: '#', key: 'Межгород' },
-                                                { value: '#', key: 'По России' }
-                                            ]">
-                                        </vue-multiselect>
+                                        <select class="select-link">
+                                            <option value>Быстрый фильтр</option>
+                                            <option value="page.html">Текстовая страница</option>
+                                            <option value="categories.html">Страница категорий</option>
+                                            <option value="city.html">Выбор города</option>
+                                        </select>
                                     </div>
                                 </div>
 
                                 <div class="col-auto">
                                     <div class="input-container">
-                                        <vue-multiselect
-                                            v-model="inputs.sort.value"
-                                            label="key"
-                                            placeholder="Сортировать"
-                                            :options="[
-                                                { value: '#', key: 'Сначала дешевле' },
-                                                { value: '#', key: 'Сначала дороже' },
-                                                { value: '#', key: 'По рейтингу' },
-                                                { value: '#', key: 'По стажу' },
-                                                { value: '#', key: 'По отзывам' }
-                                            ]">
-                                        </vue-multiselect>
+                                        <select class="select-standart">
+                                            <option value>Сортировать по</option>
+                                            <option value="#">Сначала дешевле</option>
+                                            <option value="#">Сначала дороже</option>
+                                            <option value="#">По рейтингу</option>
+                                            <option value="#">По стажу</option>
+                                            <option value="#">По отзывам</option>
+                                            <option value="#">111</option>
+                                            <option value="#">222</option>
+                                            <option value="#">333</option>
+                                            <option value="#">444</option>
+                                            <option value="#">555</option>
+                                            <option value="#">666</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="offers-list">
                             <div class="offers-list-wrap">
                                 @include('parts/offer/offer_gold.html')

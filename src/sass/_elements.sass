@@ -1,26 +1,27 @@
 /*===============  Headings  ===============*/
 h1, h2, h3, h4, h5, h6
-    font-weight: 700
+    font-weight: 500
     margin-bottom: 0
     line-height: 1.2
+    margin-bottom: 10px
 
 h1
-    +fz(24)
+    +fz(36)
 
 h2
-    +fz(24)
+    +fz(30)
 
 h3
-    +fz(18)
+    +fz(24)
 
 h4
-    +fz(16)
+    +fz(18)
 
 h5
-    +fz(14)
+    +fz(16)
 
 h6
-    +fz(12)
+    +fz(14)
 
 /*===============  Typography  ===============*/
 p
@@ -45,6 +46,10 @@ ul
         li
             &::before
                 content: none
+
+ol
+    margin-bottom: 1rem
+    padding-left: 1em
 
 a
     color: $color-link
@@ -89,12 +94,30 @@ textarea
             background-color: #fff
             border-color: $color-base
 
-.multiselect
-    min-width: 200px
+// .multiselect
+//     min-width: 200px
 
-.choices[data-type*=select-one]
+.choices
+    min-width: 200px
     .choices__inner
         padding: 0
+    &.choices_placeholder-hidden
+        .choices__list--dropdown
+            .choices__item
+                &.choices__placeholder
+                    opacity: .5
+                    color: $color-text
+                    display: none
+    .choices__list--dropdown
+        .choices__input
+            display: inline-block
+            width: 100%
+            //background-color: $color-input
+            border-bottom: 1px solid $color-border
+            border-radius: 4px 4px 0 0
+            padding-left: 15px
+            padding-right: 15px
+            transition: background-color .15s, border-color .15s
 
 .is-focused
     .choices__inner
@@ -106,7 +129,7 @@ textarea
     +element-geometry(40)
     background-color: #fff
     border: 1px solid #ced8e2
-    font-weight: 700
+    font-weight: 500
 
 .choices__list--single
     padding: 8.5px 32px 8.5px 15px
@@ -118,13 +141,15 @@ textarea
     overflow: visible
     border: none
     margin-bottom: 0
-    padding-top: 11px
-    padding-bottom: 11px
-    background-color: transparent
+    top: calc(100% + 1px)
+    // padding-top: 11px
+    // padding-bottom: 11px
+    // background-color: transparent
+    border-radius: 4px
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.25)
+    background-color: #fff
     .choices__list
-        border-radius: 4px
-        box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.25)
-        background-color: #fff
+        max-height: 155px
     .choices__item
         padding: 5px 15px
     .choices__item--selectable
@@ -138,10 +163,11 @@ textarea
     .choices__list--dropdown
         border: none
         margin-bottom: 0
-        padding-top: 11px
-        padding-bottom: 11px
+        // padding-top: 11px
+        // padding-bottom: 11px
     &.is-open
         .choices__list--dropdown
+            margin-bottom: 11px
             &::before
                 content: ""
                 display: block
@@ -151,8 +177,7 @@ textarea
                 border-bottom: none
                 border-left: 8px solid transparent
                 border-right: 8px solid transparent
-                top: auto
-                bottom: 1px
+                top: 100%
                 left: 50%
                 margin-left: -8px
                 z-index: 1
@@ -168,6 +193,7 @@ textarea
         border-color: $color-base
         color: $color-base
     .choices__list--dropdown
+        margin-top: 11px
         border: none
         &::before
             content: ""
@@ -177,7 +203,8 @@ textarea
             border-bottom: 10px solid #fff
             border-left: 8px solid transparent
             border-right: 8px solid transparent
-            top: 1px
+            top: auto
+            bottom: 100%
             left: 50%
             margin-left: -8px
             z-index: 1
